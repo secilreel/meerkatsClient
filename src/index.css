@@ -140,13 +140,12 @@ button{
     border: 0.07em solid  #ff847c;
     font-size: 0.7em;
     background-color: #ff847c;
-    clear:left;
-    float:right;
 }
 
 .container {
     background-color: #fecea8;
     color: #45171d;
+    margin: 5%;
 }
 
 .description{
@@ -154,8 +153,19 @@ button{
 }
 
 .event-box{
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+}
+
+.login-box{
+  display: flex;
+  flex-direction: column;
+}
+
+.button-box{
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 3%;
 }
 
 #cancel-error{

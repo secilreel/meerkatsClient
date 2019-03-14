@@ -1,11 +1,12 @@
 import React from 'react';
+import account from '../../Images/headshot.png';
 
 export default function EventDetails (){
     return (
         <section className="event container">
             <h2>Event 2</h2>
             <div className="event-box">
-                    <img src="resources/account.jpg" className="event-owner logo" alt="headfshot of the event planner's account" />
+                    <img src={account} className="event-owner logo" alt="headshot of the event planner's account" />
                     <div className="event-details">
                         <label htmlFor="eventDescription">Event Description:</label>
                         <p>Let's eat pho tonight</p>
@@ -20,7 +21,7 @@ export default function EventDetails (){
                         </div>
                     </div>
                 </div>
-                <div className="remove-event">
+                <div className="button-box">
                     <button type="button" className="js-remove-event-button">Remove Event</button>
                 </div>        
             </section>
