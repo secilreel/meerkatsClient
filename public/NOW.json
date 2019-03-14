@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "alias": "secilreel-meerkats-app",
+    "name": "meerkats-app",
+    "routes": [
+        {
+          "src": "^/static/(.*)",
+          "dest": "/static/$1"
+        },
+        {
+          "src": ".*",
+          "dest": "/index.html"
+        }
+    ]
+  }

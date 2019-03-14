@@ -91,6 +91,7 @@ h2, h3, h4 {
 .logo{
     border-radius: 70%;
     width: 4rem;
+    height: 4rem;
     margin-right: 2rem;
     margin-top: 2rem;
 }
