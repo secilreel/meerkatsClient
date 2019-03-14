@@ -5,6 +5,8 @@ import Header from '../Header/Header';
 import Info from '../Info/Info';
 import LoginForm from '../LoginForm/LoginForm';
 import NavBar from '../NavBar/NavBar';
+import NewEvent from '../Events/NewEvent';
+import EventDetails from '../Events/EventDetails';
 
 class App extends Component {
   render() {
@@ -12,9 +14,13 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <Header />
+        <div className="error container" hidden>
+        </div>
         <Switch>
           <Route exact path={'/'} component={Info} />
-          <Route exact path={'/login'} component={LoginForm} />
+          <Route path={'/login'} component={LoginForm} />
+          <Route path={'/new_event'} component={NewEvent} />
+          <Route path={'/event/:id'} component={EventDetails} />
         </Switch>
       </div>
     );
