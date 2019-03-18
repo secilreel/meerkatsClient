@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../Images/logo.jpg';
 
 export default function Header (){
@@ -8,11 +9,12 @@ export default function Header (){
             <div id="siteLogo" >
               <img src={logo} className="logo" alt="Logo of the site with meerkats huddled up" />
             </div>
+            <Link to={'/'}>
             <div id="siteTitle" >
             <h1>Meerkats</h1>
             </div>
+            </Link>
           </section>
-          <p id="tagline">Huddle up with friends!</p>
         </header>
     );
 }
