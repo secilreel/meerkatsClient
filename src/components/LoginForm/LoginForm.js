@@ -1,14 +1,39 @@
 import React, {Component} from 'react';
+import AuthApiService from '../../services/auth-api-services';
+import TokenService from '../../services/token-service'; 
 
 export default class LoginForm extends Component{
-
+    static defaultProps = {
+        onLoginSuccess: () => {}
+    }
     state ={error: null};
+
+    handleSubmitJWTAuth = e =>{
+        e.preventDefault();
+        this.setState({error: null});
+        const {user_name, password} = e.target;
+
+        AuthApiService.postLogin({
+            user_name: user_name.value,
+            password: password.value,
+        })
+        .then(res => {
+            user_name.value = '';
+            password.value = '';
+            TokenService.saveAuthToken(res.authToken);
+            this.props.onLoginSuccess();
+        })
+        .catch(res => {
+            this.setState({error: res.error});
+        })
+
+    }
 
     render(){
         return(
             <div className="login container">
                 <h2>Login</h2>
-                <form>
+                <form onSubmit={this.handleSubmitJWTAuth}>
                     <div className="login-box">
                     <div className="username">
                         <label htmlFor="loginUsername">User name:</label>
