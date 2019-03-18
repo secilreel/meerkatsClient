@@ -11,11 +11,11 @@ export default class LoginForm extends Component{
                 <form>
                     <div className="login-box">
                     <div className="username">
-                        <label htmlFor="loginUsername">User name</label>
+                        <label htmlFor="loginUsername">User name:</label>
                         <input required name="username"/>
                     </div>
                     <div className="password">
-                        <label htmlFor="loginPassword">Password</label>
+                        <label htmlFor="loginPassword">Password:</label>
                         <input required name="password" type="password"/>
                     </div>
                     <div className="button-box">

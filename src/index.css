@@ -163,10 +163,15 @@ button{
   flex-direction: column;
 }
 
+.search-box{
+  padding: 2%;
+}
+
 .button-box{
   display: flex;
   flex-direction: row-reverse;
   margin: 3%;
+  padding-bottom: 2%;
 }
 
 #cancel-error{

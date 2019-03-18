@@ -9,6 +9,7 @@ import NewEvent from '../Events/NewEvent';
 import EventDetails from '../Events/EventDetails';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import EventList from '../Events/EventList';
+import Friends from '../Friends/Friends';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
           <Route path={'/new_event'} component={NewEvent} />
           <Route exact path={'/event'} component={EventList} />
           <Route path={'/event/:id'} component={EventDetails} />
+          <Route path={'/friends'} component={Friends} />
         </Switch>
         </ErrorPage>
       </div>
