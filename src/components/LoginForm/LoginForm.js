@@ -5,7 +5,6 @@ export default class LoginForm extends Component{
     state ={error: null};
 
     render(){
-        const { error } =this.state;
         return(
             <div className="login container">
                 <h2>Login</h2>

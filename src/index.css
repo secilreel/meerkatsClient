@@ -83,7 +83,7 @@ h1 {
 }
 
 h2, h3, h4 {
-  font-size: 90%;
+  /* font-size: 90%; */
   color: #f03861;
   text-align: center;
 }
@@ -127,7 +127,7 @@ header {
 }
 
 label{
-  font-family:'Open Sans', sans-serif;
+  font-family:'Poppins', sans-serif;
 }
 
 .js-add-event  {
@@ -140,6 +140,7 @@ button{
     border: 0.07em solid  #ff847c;
     font-size: 0.7em;
     background-color: #ff847c;
+    font-family: 'PT Serif', serif;
 }
 
 .container {

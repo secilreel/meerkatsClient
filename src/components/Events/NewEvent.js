@@ -18,10 +18,10 @@ export default function NewEvent (){
                 </div>
                 <div className="attendees">
                     <select multiple className="invited-friends">
-                            <option>Friend 1</option>
-                            <option>Friend 2</option>
-                            <option>Friend 3</option>
-                            <option>Friend 4</option>
+                        <option>Friend 1</option>
+                        <option>Friend 2</option>
+                        <option>Friend 3</option>
+                        <option>Friend 4</option>
                     </select>
                 </div>
                 <div className="button-box">
