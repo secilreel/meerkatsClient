@@ -12,6 +12,8 @@ export default class LoginForm extends Component{
         e.preventDefault();
         this.setState({error: null});
         const {user_name, password} = e.target;
+        console.log(user_name.value);
+        console.log(password.value);
 
         AuthApiService.postLogin({
             user_name: user_name.value,
@@ -33,18 +35,19 @@ export default class LoginForm extends Component{
         return(
             <div className="login container">
                 <h2>Login</h2>
-                <form onSubmit={this.handleSubmitJWTAuth}>
+                <form onSubmit={
+                    this.handleSubmitJWTAuth}>
                     <div className="login-box">
                     <div className="username">
                         <label htmlFor="loginUsername">User name:</label>
-                        <input required name="username"/>
+                        <input required name="user_name"/>
                     </div>
                     <div className="password">
                         <label htmlFor="loginPassword">Password:</label>
                         <input required name="password" type="password"/>
                     </div>
                     <div className="button-box">
-                    <button type="submit">Login</button>
+                    <button type="submit" value="Submit">Login</button>
                     </div>
                     </div>
                 </form>

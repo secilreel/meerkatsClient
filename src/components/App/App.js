@@ -22,8 +22,8 @@ class App extends Component {
           <Route exact path={'/'} component={Info} />
           <Route path={'/login'} component={LoginForm} />
           <Route path={'/new_event'} component={NewEvent} />
-          <Route exact path={'/event'} component={EventList} />
-          <Route path={'/event/:id'} component={EventDetails} />
+          <Route exact path={'/events'} component={EventList} />
+          <Route path={'/events/:id'} component={EventDetails} />
           <Route path={'/friends'} component={Friends} />
         </Switch>
         </ErrorPage>
