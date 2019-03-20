@@ -28,7 +28,6 @@ export default class LoginForm extends Component{
         .catch(res => {
             this.setState({error: res.error});
         })
-
     }
 
     render(){
