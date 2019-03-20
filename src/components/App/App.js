@@ -10,6 +10,8 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 import EventList from '../Events/EventList';
 import Friends from '../Friends/Friends';
 import LoginPage from '../../routes/LoginPage';
+import RegistrationPage from '../../routes/RegistrationPage';
+import NotFoundPage from '../../routes/NotFoundPage';
 
 class App extends Component {
   render() {
@@ -21,10 +23,12 @@ class App extends Component {
         <Switch>
           <Route exact path={'/'} component={Info} />
           <Route path={'/login'} component={LoginPage} />
+          <Route path={'/register'} component={RegistrationPage} />
           <Route path={'/new_event'} component={NewEvent} />
           <Route exact path={'/events'} component={EventList} />
           <Route path={'/events/:id'} component={EventDetails} />
           <Route path={'/friends'} component={Friends} />
+          <Route component={NotFoundPage}/>
         </Switch>
         </ErrorPage>
       </div>

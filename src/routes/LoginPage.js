@@ -10,14 +10,12 @@ export default class LoginPage extends Component {
   }
 
   handleLoginSuccess = () => {
-    const { history } = this.props
-    history.push('/events')
+    this.props.history.push('/events')
   }
 
   render() {
     return (
       <div className='LoginPage'>
-        <h2>Login</h2>
         <LoginForm
           onLoginSuccess={this.handleLoginSuccess}
         />
