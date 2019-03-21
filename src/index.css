@@ -137,6 +137,7 @@ label{
 
 button{
     border: 0.07em solid  #ff847c;
+    border-radius: 4%;
     font-size: 0.7em;
     background-color: #ff847c;
     font-family: 'PT Serif', serif;

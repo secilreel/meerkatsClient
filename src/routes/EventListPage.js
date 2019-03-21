@@ -11,19 +11,19 @@ export default class EventListPage extends Component {
     EventApiService.getEvents()
       .then(this.context.setEventList)
       .catch(this.context.setError)
-    console.log(this.context.state)
+
   }
 
   componentWillUnmount() {
-    this.context.clearEvent()
+    // this.context.clearEventList()
   }
 
   render() {
-    console.log(this.context)
     const { eventList } = this.context
+    console.log("event context", this.context)
     return (
       <section className='EventListPage'>
-        <EventList />
+        <EventList eventList={eventList}/>
       </section>
     )
   }

@@ -19,6 +19,11 @@ export class EventListProvider extends Component {
     this.setState({ eventList })
   }
 
+  clearEventList = eventList => {
+    this.setState({ eventList: [] })
+  }
+
+
   setError = error => {
     console.error(error)
     this.setState({ error })

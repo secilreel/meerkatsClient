@@ -15,6 +15,10 @@ export default function EventDetails (props){
                         <p>{event.details}</p>
                         <label htmlFor="eventVenue">Venue:</label>
                         <p>{event.place}</p>
+                        <label htmlFor="eventVenue">Day:</label>
+                        <p>{event.meeting_day}</p>
+                        <label htmlFor="eventVenue">Time:</label>
+                        <p>{event.meeting_time}</p>
                         <div className="attendees">
                             <label htmlFor="attendees">Attending:</label>
                             <ul>

@@ -6,15 +6,15 @@ const EventApiService = {
   getEvents() {
     return fetch(`${config.API_ENDPOINT}/events`, {
       headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`
       },
     })
-      .then(res =>{
-        console.log(res.json())
-        (!res.ok)
+      .then(res =>
+         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      }
       )
+      .then(resjson => resjson)
   },
 
   getEvent(eventId) {
@@ -28,6 +28,7 @@ const EventApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+      // .then(resjson => console.log(resjson))
   },
 
   getEventParticipants(eventId) {
@@ -42,6 +43,7 @@ const EventApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
     })
+    // .then(resjson =>console.log(resjson))
   },
 
   addEventParticipant(eventId){
@@ -56,6 +58,7 @@ const EventApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+      .then(resjson =>console.log(resjson))
   },
 
   updateEventParticipant(eventId, parId, attending) {
@@ -74,6 +77,7 @@ const EventApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+      .then(resjson =>console.log(resjson))
   }
 }
 
