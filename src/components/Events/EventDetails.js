@@ -5,7 +5,6 @@ export default function EventDetails (props){
     const event= props.event
     console.log("participants", props.participants)
 
-    
     return (
         <section className="event container">
             <h2>{event.title}</h2>

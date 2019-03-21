@@ -8,10 +8,12 @@ const EventApiService = {
       headers: {
       },
     })
-      .then(res =>
+      .then(res =>{
+        console.log(res.json())
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
+      }
       )
   },
 
@@ -34,11 +36,12 @@ const EventApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       },
     })
-      .then(res =>
+      .then(res =>{
+        console.log(res)
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      )
+    })
   },
 
   addEventParticipant(eventId){
