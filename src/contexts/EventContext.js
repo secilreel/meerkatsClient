@@ -4,7 +4,7 @@ export const nullEvent = {}
 
 const EventContext = React.createContext({
   event: nullEvent,
-  participant: [],
+  participant: {},
   error: null,
   setError: () => {},
   clearError: () => { },
@@ -19,6 +19,7 @@ export default EventContext
 export class EventProvider extends Component {
   state = {
     event: nullEvent,
+    participants: [],
     error: null,
   };
 
@@ -39,10 +40,11 @@ export class EventProvider extends Component {
     this.setEvent(nullEvent)
   }
 
-  setParticipants = participants => participants.map(participant => {
-      this.setState([...this.state.participants], participant)
-  })
-
+  setParticipants = participants =>
+  {
+   this.setState({participants})
+  }
+      
   render() {
     const value = {
       event: this.state.event,

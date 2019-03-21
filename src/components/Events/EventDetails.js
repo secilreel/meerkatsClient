@@ -3,11 +3,15 @@ import headshot from '../../Images/headshot.png';
 
 export default function EventDetails (props){
     const event= props.event
+    const participants = props.participants
     console.log("participants", props.participants)
 
     return (
         <section className="event container">
             <h2>{event.title}</h2>
+            <div className="button-box">
+                <button type="button" onClick={props.handleClickButton}>Close</button>
+            </div>
             <div className="event-box">
                     <img src={headshot} className="event-owner logo" alt="headshot of the event planner's account" />
                     <div className="event-details">
@@ -15,17 +19,21 @@ export default function EventDetails (props){
                         <p>{event.details}</p>
                         <label htmlFor="eventVenue">Venue:</label>
                         <p>{event.place}</p>
-                        <label htmlFor="eventVenue">Day:</label>
+                        <label htmlFor="eventDay">Day:</label>
                         <p>{event.meeting_day}</p>
-                        <label htmlFor="eventVenue">Time:</label>
+                        <label htmlFor="eventTime">Time:</label>
                         <p>{event.meeting_time}</p>
                         <div className="attendees">
                             <label htmlFor="attendees">Attending:</label>
                             <ul>
-                                <li>Friend 1</li>
-                                <li>Friend 2</li>
-                                <li>Friend 3</li>
-                                <li>Friend 4</li>
+                            {participants.map(participant =>
+                            <li 
+                            key={participant.id}
+                            > 
+                            {participant.user_name}, {participant.attending}
+                            </li>)
+                            }
+                    
                             </ul>
                         </div>
                     </div>

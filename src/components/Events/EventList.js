@@ -15,6 +15,8 @@ export default function EventList (props){
         title={event.title}
         day={event.meeting_day}
         time={event.meeting_time}
+        place={event.place}
+        owner={event.event_owner}
         />)}
     </div>
 </div>

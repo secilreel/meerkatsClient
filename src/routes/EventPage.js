@@ -22,9 +22,9 @@ export default class EventPage extends Component {
     console.log("event context", this.context)
     const event = this.context
     return (
-      <section className='EventListPage'>
+      <div className='EventListPage'>
         <Event event={event} />
-      </section>
+      </div>
     )
   }
 }

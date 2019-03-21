@@ -20,11 +20,10 @@ export default class EventListPage extends Component {
 
   render() {
     const { eventList } = this.context
-    console.log("event context", this.context)
     return (
-      <section className='EventListPage'>
+      <div className='EventListPage'>
         <EventList eventList={eventList}/>
-      </section>
+      </div>
     )
   }
 }

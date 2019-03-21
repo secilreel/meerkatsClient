@@ -1,18 +1,29 @@
 import React, {Component} from "react";
-import account from '../../Images/account.jpg';
+import FriendApiService from '../../services/friend-api-services'
+import EventApiService from '../../services/event-api-services'
 
 export default class NewEvent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      friends: [
-        { id: 1, name: "Irem", img: `${account}` },
-        { id: 2, name: "Wens", img: `${account}` },
-        { id: 3, name: "Alex", img: `${account}` }
-      ],
+      friends: [],
       selectedFriends: []
     };
   }
+  static defaultProps ={
+    history:{
+        push:() => {},
+    },
+}
+  setFriends = friends => {
+    this.setState({ friends })
+  }
+  componentDidMount(){
+    FriendApiService.getFriends()
+      .then(this.setFriends)
+      console.log(this.state.friends)
+  }
+  
   selectFriend(e, id) {
     e.preventDefault();
     let newSelectedFriends;
@@ -34,6 +45,8 @@ export default class NewEvent extends Component {
       selectedFriends: this.state.selectedFriends
     };
     console.log("fetch", data);
+    EventApiService.addEvent()
+    .then(event => this.props.history.push(`/${event.id}`))
   }
   render() {
     console.log(this.state.friends, this.state.selectedFriends);
@@ -53,7 +66,8 @@ export default class NewEvent extends Component {
                 <input type="text" />
             </div>
             <div className="attendees">
-          {this.state.friends.map(friend => {
+          {
+            this.state.friends.map(friend => {
             if (this.state.selectedFriends.includes(friend.id)) {
               return (
                 <div
@@ -61,8 +75,8 @@ export default class NewEvent extends Component {
                   className="selected"
                   onClick={e => this.selectFriend(e, friend.id)}
                 >
-                  <img src={friend.img} className="account logo" alt="headshot of the account holder"/>
-                  <p>{friend.name}</p>
+                  <img src={friend.image} className="account logo" alt="headshot of the account holder"/>
+                  <p>{friend.user_name}</p>
                 </div>
               );
             }
@@ -71,8 +85,8 @@ export default class NewEvent extends Component {
                 key={friend.id}
                 onClick={e => this.selectFriend(e, friend.id)}
               >
-                <img src={friend.img} className="account logo" alt="headshot of the account holder"/>
-                <p>{friend.name}</p>
+                <img src={friend.image} className="account logo" alt="headshot of the account holder"/>
+                <p>{friend.user_name}</p>
               </div>
             );
           })}

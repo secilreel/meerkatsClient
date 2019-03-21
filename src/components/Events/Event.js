@@ -4,10 +4,9 @@ import {Link} from 'react-router-dom';
 
 export default class Event extends Component{
     render(){
-    console.log("event", this.props)
     const event = this.props
     return (
-      <Link to={`/events/:${event.id}`}>
+      <Link to={`/events/${event.id}`}>
         <section className="event container">
             <h2>{event.title}</h2>
             <div className="event-box">
@@ -17,7 +16,7 @@ export default class Event extends Component{
                     <p>hosted by: {`${event.owner}`}</p>
                     <p>day: {`${event.day}`}</p>
                     <p>time: {`${event.time}`}</p>
-                    <p>venue: {`${event.owner}`}</p>
+                    <p>venue: {`${event.place}`}</p>
                 </div>
             </div>
             <div className="button-box">
