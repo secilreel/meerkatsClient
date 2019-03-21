@@ -21,7 +21,6 @@ export default class NewEvent extends Component {
   componentDidMount(){
     FriendApiService.getFriends()
       .then(this.setFriends)
-      console.log(this.state.friends)
   }
   
   selectFriend(e, id) {
@@ -49,7 +48,7 @@ export default class NewEvent extends Component {
     .then(event => this.props.history.push(`/${event.id}`))
   }
   render() {
-    console.log(this.state.friends, this.state.selectedFriends);
+    console.log(this.state.friends);
     return (
         <section className="event container">
         <h2>New Event</h2>

@@ -10,9 +10,8 @@ export default class Event extends Component{
         <section className="event container">
             <h2>{event.title}</h2>
             <div className="event-box">
-                <img src={account} className="event-owner logo" alt="headshot of the event planner" />
+                <img src={event.image} className="event-owner logo" alt="headshot of the event planner" />
                 <div className="event-summary">
-                    <p>Summary</p>
                     <p>hosted by: {`${event.owner}`}</p>
                     <p>day: {`${event.day}`}</p>
                     <p>time: {`${event.time}`}</p>

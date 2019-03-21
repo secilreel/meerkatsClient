@@ -20,7 +20,7 @@ const FriendApiService = {
   },
 
   searchFriends(query) {
-    return fetch(`${config.API_ENDPOINT}/friends:${query}`, {
+    return fetch(`${config.API_ENDPOINT}/friends?${query}`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       },
