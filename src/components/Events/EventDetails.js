@@ -1,23 +1,29 @@
 import React from 'react';
 import headshot from '../../Images/headshot.png';
 
-export default function EventDetails (){
+export default function EventDetails (props){
+    const event= props.event
+    console.log("participants", props.participants)
+
+    
     return (
         <section className="event container">
-            <h2>Event 2</h2>
+            <h2>{event.title}</h2>
             <div className="event-box">
                     <img src={headshot} className="event-owner logo" alt="headshot of the event planner's account" />
                     <div className="event-details">
                         <label htmlFor="eventDescription">Event Description:</label>
-                        <p>Let's eat pho tonight</p>
+                        <p>{event.details}</p>
                         <label htmlFor="eventVenue">Venue:</label>
-                        <p>Pho Basil</p>
+                        <p>{event.place}</p>
                         <div className="attendees">
                             <label htmlFor="attendees">Attending:</label>
-                            <option>Friend 1</option>
-                            <option>Friend 2</option>
-                            <option>Friend 3</option>
-                            <option>Friend 4</option>
+                            <ul>
+                                <li>Friend 1</li>
+                                <li>Friend 2</li>
+                                <li>Friend 3</li>
+                                <li>Friend 4</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

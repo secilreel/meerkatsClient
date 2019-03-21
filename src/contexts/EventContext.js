@@ -9,7 +9,7 @@ const EventContext = React.createContext({
   setError: () => {},
   clearError: () => { },
   setEvent: () => {},
-  deleteEvent: () => {},
+  clearEvent: () => {},
   setParticipants: () => {},
   updateParticipant: () => {},
 })
@@ -35,13 +35,13 @@ export class EventProvider extends Component {
     this.setState({ event })
   }
 
-  deleteEvent = () => {
+  clearEvent = () => {
     this.setEvent(nullEvent)
   }
 
-  setParticipants = participant => {
-    this.setState([...this.state.participants], participant)
-  }
+  setParticipants = participants => participants.map(participant => {
+      this.setState([...this.state.participants], participant)
+  })
 
   render() {
     const value = {
@@ -51,8 +51,8 @@ export class EventProvider extends Component {
       setError: this.setError,
       clearError: this.clearError,
       setEvent: this.setEvent,
-      setParticipants: this.setReviews,
-      deleteEvent: this.deleteEvent,
+      setParticipants: this.setParticipants,
+      clearEvent: this.clearEvent,
     }
     return (
       <EventContext.Provider value={value}>

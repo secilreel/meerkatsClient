@@ -1,6 +1,4 @@
 import React from 'react';
-import headshot from '../../Images/headshot.png';
-import account from '../../Images/account.jpg';
 import Event from './Event';
 
 export default function EventList (){

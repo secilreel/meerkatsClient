@@ -5,13 +5,13 @@ import Header from '../Header/Header';
 import Info from '../Info/Info';
 import NavBar from '../NavBar/NavBar';
 import NewEvent from '../Events/NewEvent';
-import EventDetails from '../Events/EventDetails';
 import ErrorPage from '../ErrorPage/ErrorPage';
-import EventList from '../Events/EventList';
 import Friends from '../Friends/Friends';
 import LoginPage from '../../routes/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage';
 import NotFoundPage from '../../routes/NotFoundPage';
+import EventListPage from '../../routes/EventListPage';
+import ExtendedEventPage from '../../routes/ExtendedEventPage';
 
 class App extends Component {
   render() {
@@ -25,8 +25,8 @@ class App extends Component {
           <Route path={'/login'} component={LoginPage} />
           <Route path={'/register'} component={RegistrationPage} />
           <Route path={'/new_event'} component={NewEvent} />
-          <Route exact path={'/events'} component={EventList} />
-          <Route path={'/events/:id'} component={EventDetails} />
+          <Route exact path={'/events'} component={EventListPage} />
+          <Route path={'/events/:id'} component={ExtendedEventPage} />
           <Route path={'/friends'} component={Friends} />
           <Route component={NotFoundPage}/>
         </Switch>
