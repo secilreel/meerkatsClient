@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import headshot from '../../Images/headshot.png';
 import EventContext from '../../contexts/EventContext';
-import EventApiService from '../../services/event-api-services';
+import EventApiService from '../../services/event-api-services'
 
 export default class EventInvitation extends Component {
     static defaultProps = {
@@ -15,15 +15,11 @@ export default class EventInvitation extends Component {
         console.log(eventId)
         EventApiService
             .getEvent(eventId)
-            .then(this.context.setEvent)
-            .catch(this.context.setError)
-        EventApiService
-            .getEventParticipants(eventId)
             .then(this.context.setParticipants)
             .catch(this.context.setError)
 }
 
-    handleClickButton=e=>{
+    handleClickCloseButton=e=>{
         console.log("close button clicked")
         console.log(this.props)
         this.props.history.push('/events')
@@ -36,7 +32,7 @@ export default class EventInvitation extends Component {
         <section className="event container">
             <h2>{this.event.title}</h2>
             <div className="button-box">
-                <button type="button" onClick={this.handleClickButton}>Close</button>
+                <button type="button" onClick={this.handleClickCloseButton}>Close</button>
             </div>
             <div className="event-box">
                     <img src={headshot} className="event-owner logo" alt="headshot of the event planner's account" />

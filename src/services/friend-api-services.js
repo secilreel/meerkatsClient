@@ -3,8 +3,8 @@ import TokenService from './token-service'
 
 const FriendApiService = {
 
-  getFriends() {
-    return fetch(`${config.API_ENDPOINT}/friends`, {
+  getFriends(id) {
+    return fetch(`${config.API_ENDPOINT}/friends/${id}`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       },

@@ -28,7 +28,7 @@ class App extends Component {
           <Route path={'/new_event'} component={NewEvent} />
           <Route exact path={'/events'} component={EventListPage} />
           <Route exaact path={'/events/:id'} component={ExtendedEventPage} />
-          <Route exact path={'events/:id/status'} component={EventInvitation} />
+          <Route path={'events/:id/status'} component={EventInvitation} />
           <Route path={'/friends'} component={Friends} />
           <Route component={NotFoundPage}/>
         </Switch>

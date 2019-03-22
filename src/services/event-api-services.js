@@ -14,7 +14,6 @@ const EventApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
-      // .then(resjson => resjson)
   },
 
   getEvent(eventId) {
@@ -41,17 +40,14 @@ const EventApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
     )
-    // .then(resjson =>{
-    //   console.log("second async", resjson)
-    //   return resjson
-    // })
   },
 
   addEvent(newEvent){
     return fetch(`${config.API_ENDPOINT}/events`, {
       method: 'POST',
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        'content-type': 'application/json'
       },
       body: JSON.stringify(newEvent)
     })
@@ -62,12 +58,14 @@ const EventApiService = {
       )
   },
 
-  addEventParticipant(eventId){
+  addEventParticipant(eventId, newParticipant){
     return fetch(`${config.API_ENDPOINT}/events/${eventId}/participants`, {
       method: 'POST',
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        'content-type': 'application/json'
       },
+      body: JSON.stringify(newParticipant)
     })
       .then(res =>
         (!res.ok)

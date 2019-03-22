@@ -7,7 +7,8 @@ export default class NewEvent extends Component {
     super(props);
     this.state = {
       friends: [],
-      selectedFriends: []
+      selectedFriends: [],
+      title:''
     };
   }
   static defaultProps ={
@@ -42,14 +43,23 @@ export default class NewEvent extends Component {
   onSubmit(e) {
     e.preventDefault();
     const data = {
-      selectedFriends: this.state.selectedFriends
+      selectedFriends: this.state.selectedFriends,
     };
+    const {title, description, date, time, place} = e.target;
+    const newEvent = {
+      title: title.value, 
+      details: description.value,
+      meeting_day: date.value, 
+      meeting_time: time.value, 
+      place: place.value
+    }
     console.log("fetch", data);
-    EventApiService.addEvent()
+    EventApiService.addEvent(newEvent)
+    .then(event=> EventApiService.addEventParticipant(event.id, data))
     .then(event => this.props.history.push(`/${event.id}`))
   }
   render() {
-    console.log(this.state.friends);
+    console.log(this.state.selectedFriends);
     return (
         <section className="event container">
         <h2>New Event</h2>
@@ -57,21 +67,25 @@ export default class NewEvent extends Component {
             <button type="button">Close</button>
         </div>  
         <form onSubmit={e => this.onSubmit(e)}>
-            <div className="eventName">
-                <label htmlFor="eventName">Name:</label>
-                <input required />
+            <div className="eventTitle">
+                <label htmlFor="title">Title:</label>
+                <input required name="title"/>
             </div>
             <div className="eventDescription">
                 <label htmlFor="description">Description:</label>
-                <input type="text" />
+                <input name="description"/>
             </div>
             <div className="eventDay">
-                <label htmlFor="description">Date:</label>
-                <input type="date" />
+                <label htmlFor="day">Date:</label>
+                <input type="date" name="date"/>
             </div>
             <div className="eventDescription">
-                <label htmlFor="description">Time:</label>
-                <input type="time" />
+                <label htmlFor="time">Time:</label>
+                <input type="time" name="time" />
+            </div>
+            <div className="eventPlace">
+                <label htmlFor="place">Place:</label>
+                <input type="place" name="place"/>
             </div>
             <div className="attendees">
           {

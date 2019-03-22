@@ -6,7 +6,7 @@ import plus from '../Images/plus.svg';
 export default function NavBar (){
     return (
         <nav role="navigation" className="nav-links">
-            <Link to={'/new_event'}>
+            <Link to={`/new_event`}>
             <img src={plus} className="account logo" alt="plus sign"/>
             </Link>
             <Link to={'/login'}>
