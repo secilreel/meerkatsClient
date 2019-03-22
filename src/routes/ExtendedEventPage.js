@@ -29,6 +29,7 @@ export default class ExtendedEventPage extends Component {
   render() {
     const { event } = this.context
     const participants = this.context.participants
+
     return (
       <div className='ExtendedEventPage'>
         <EventDetails 

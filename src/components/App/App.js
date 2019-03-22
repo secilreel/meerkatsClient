@@ -12,6 +12,7 @@ import RegistrationPage from '../../routes/RegistrationPage';
 import NotFoundPage from '../../routes/NotFoundPage';
 import EventListPage from '../../routes/EventListPage';
 import ExtendedEventPage from '../../routes/ExtendedEventPage';
+import EventInvitation from '../Events/EventInvitation';
 
 class App extends Component {
   render() {
@@ -26,7 +27,8 @@ class App extends Component {
           <Route path={'/register'} component={RegistrationPage} />
           <Route path={'/new_event'} component={NewEvent} />
           <Route exact path={'/events'} component={EventListPage} />
-          <Route path={'/events/:id'} component={ExtendedEventPage} />
+          <Route exaact path={'/events/:id'} component={ExtendedEventPage} />
+          <Route exact path={'events/:id/status'} component={EventInvitation} />
           <Route path={'/friends'} component={Friends} />
           <Route component={NotFoundPage}/>
         </Switch>

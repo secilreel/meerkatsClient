@@ -65,6 +65,14 @@ export default class NewEvent extends Component {
                 <label htmlFor="description">Description:</label>
                 <input type="text" />
             </div>
+            <div className="eventDay">
+                <label htmlFor="description">Date:</label>
+                <input type="date" />
+            </div>
+            <div className="eventDescription">
+                <label htmlFor="description">Time:</label>
+                <input type="time" />
+            </div>
             <div className="attendees">
           {
             this.state.friends.map(friend => {

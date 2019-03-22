@@ -47,12 +47,13 @@ const EventApiService = {
     // })
   },
 
-  addEvent(){
+  addEvent(newEvent){
     return fetch(`${config.API_ENDPOINT}/events`, {
       method: 'POST',
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       },
+      body: JSON.stringify(newEvent)
     })
       .then(res =>
         (!res.ok)

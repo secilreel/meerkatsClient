@@ -1,19 +1,26 @@
 import React,{Component} from 'react';
 import headshot from '../../Images/headshot.png';
+import EventContext from '../../contexts/EventContext';
+import EventApiService from '../../services/event-api-services';
 
-export default class EventDetails extends Component {
+export default class EventInvitation extends Component {
     static defaultProps = {
-        location: {},
-        history: {
-          push: () => {},
-        },
-      }
-    constructor(props) {
-        super(props);
-    this.state={
-        event: this.props.event,
-        participants: this.props.participant
-    }
+        match: { params: {} },
+       }
+    
+      static contextType = EventContext
+
+    componentDidMount() {
+        const eventId = parseInt(this.props.match.params.id);
+        console.log(eventId)
+        EventApiService
+            .getEvent(eventId)
+            .then(this.context.setEvent)
+            .catch(this.context.setError)
+        EventApiService
+            .getEventParticipants(eventId)
+            .then(this.context.setParticipants)
+            .catch(this.context.setError)
 }
 
     handleClickButton=e=>{
@@ -23,10 +30,11 @@ export default class EventDetails extends Component {
     }
 
     render(){
+        console.log(this.props)
 
     return (
         <section className="event container">
-            <h2>{this.props.event.title}</h2>
+            <h2>{this.event.title}</h2>
             <div className="button-box">
                 <button type="button" onClick={this.handleClickButton}>Close</button>
             </div>
@@ -34,24 +42,19 @@ export default class EventDetails extends Component {
                     <img src={headshot} className="event-owner logo" alt="headshot of the event planner's account" />
                     <div className="event-details">
                         <label htmlFor="eventDescription">Event Description:</label>
-                        <p>{this.props.event.details}</p>
+                        <p>{this.event.details}</p>
                         <label htmlFor="eventVenue">Venue:</label>
-                        <p>{this.props.event.place}</p>
+                        <p>{this.event.place}</p>
                         <label htmlFor="eventDay">Day:</label>
-                        <p>{this.props.event.meeting_day}</p>
+                        <p>{this.event.meeting_day}</p>
                         <label htmlFor="eventTime">Time:</label>
-                        <p>{this.props.event.meeting_time}</p>
-                        <div className="attendees">
-                            <label htmlFor="attendees">Participants:</label>
+                        <p>{this.event.meeting_time}</p>
+                        <div className="attending">
+                            <label htmlFor="attendees">Can we count you in?</label>
                             <ul>
-                            {this.props.participants.map(participant =>
-                            <li 
-                            key={participant.id}
-                            >
-                            {participant.user_name}: {participant.attending};
-                            </li>)
-                            }
-                    
+                                <li>Yes</li>
+                                <li>Let me think!</li>
+                                <li>No</li>
                             </ul>
                         </div>
                     </div>

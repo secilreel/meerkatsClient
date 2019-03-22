@@ -159,6 +159,11 @@ button{
   flex-direction: row;
 }
 
+li{
+  list-style: none;
+  display: block;
+}
+
 .login-box{
   padding: 2%;
   display: flex;
