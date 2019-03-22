@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import account from '../../Images/account.jpg';
 import {Link} from 'react-router-dom';
 
 export default class Event extends Component{

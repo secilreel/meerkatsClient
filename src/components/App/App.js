@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Header from '../Header/Header';
-import Info from '../Info/Info';
-import NavBar from '../NavBar/NavBar';
+import Header from '../Header';
+import Info from '../Info';
+import NavBar from '../NavBar';
 import NewEvent from '../Events/NewEvent';
-import ErrorPage from '../ErrorPage/ErrorPage';
-import Friends from '../Friends/Friends';
+import ErrorPage from '../ErrorPage';
+import Friends from '../Friends';
 import LoginPage from '../../routes/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage';
 import NotFoundPage from '../../routes/NotFoundPage';

@@ -19,6 +19,7 @@ export default class NewEvent extends Component {
     this.setState({ friends })
   }
   componentDidMount(){
+    console.log(this.props)
     FriendApiService.getFriends()
       .then(this.setFriends)
   }

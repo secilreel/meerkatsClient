@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import AuthApiService from '../../services/auth-api-services';
-import TokenService from '../../services/token-service'; 
+import AuthApiService from '../services/auth-api-services';
+import TokenService from '../services/token-service'; 
 
 export default class LoginForm extends Component{
     static defaultProps = {
@@ -12,8 +12,6 @@ export default class LoginForm extends Component{
         e.preventDefault();
         this.setState({error: null});
         const {user_name, password} = e.target;
-        console.log(user_name.value);
-        console.log(password.value);
 
         AuthApiService.postLogin({
             user_name: user_name.value,

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import account from '../../Images/account.jpg';
-import plus from '../../Images/plus.svg';
+import account from '../Images/account.jpg';
+import plus from '../Images/plus.svg';
 
 export default function NavBar (){
     return (
