@@ -20,7 +20,6 @@ export default class NewEvent extends Component {
     this.setState({ friends })
   }
   componentDidMount(){
-    console.log(this.props)
     FriendApiService.getFriends()
       .then(this.setFriends)
   }
@@ -28,7 +27,7 @@ export default class NewEvent extends Component {
   selectFriend(e, id) {
     e.preventDefault();
     let newSelectedFriends;
-    console.log(this.state.selectedFriends.includes(id));
+    console.log("newEvents friends", this.state.friends)
     if (this.state.selectedFriends.includes(id)) {
       newSelectedFriends = this.state.selectedFriends.filter(
         friendId => friendId !== id
@@ -42,9 +41,6 @@ export default class NewEvent extends Component {
   }
   onSubmit(e) {
     e.preventDefault();
-    const data = {
-      selectedFriends: this.state.selectedFriends,
-    };
     const {title, description, date, time, place} = e.target;
     const newEvent = {
       title: title.value, 
@@ -53,13 +49,25 @@ export default class NewEvent extends Component {
       meeting_time: time.value, 
       place: place.value
     }
-    console.log("fetch", data);
+
     EventApiService.addEvent(newEvent)
-    .then(event=> EventApiService.addEventParticipant(event.id, data))
-    .then(event => this.props.history.push(`/${event.id}`))
+    .then(event=> {
+      console.log(typeof event.id)
+      const friendsId = this.state.selectedFriends
+      console.log(friendsId);
+      let participants = []; 
+      for (let i=0; i<friendsId.length; i++){
+      participants[i]={
+        user_id: friendsId,
+        attending: 'pending'
+      }
+    }
+      EventApiService.addEventParticipants(event.id, participants)
+      this.props.history.push(`events/${event.id}`)
+    })
   }
   render() {
-    console.log(this.state.selectedFriends);
+    
     return (
         <section className="event container">
         <h2>New Event</h2>

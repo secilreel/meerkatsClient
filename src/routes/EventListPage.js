@@ -14,10 +14,6 @@ export default class EventListPage extends Component {
 
   }
 
-  componentWillUnmount() {
-    // this.context.clearEventList()
-  }
-
   render() {
     const { eventList } = this.context
     return (

@@ -58,14 +58,14 @@ const EventApiService = {
       )
   },
 
-  addEventParticipant(eventId, newParticipant){
+  addEventParticipants(eventId, newParticipants){
     return fetch(`${config.API_ENDPOINT}/events/${eventId}/participants`, {
       method: 'POST',
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
         'content-type': 'application/json'
       },
-      body: JSON.stringify(newParticipant)
+      body: JSON.stringify(newParticipants)
     })
       .then(res =>
         (!res.ok)

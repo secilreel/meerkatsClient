@@ -35,6 +35,7 @@ export default class ExtendedEventPage extends Component {
         <EventDetails 
         event={event}
         participants={participants}
+        {...this.props}
         />
       </div>
     )
