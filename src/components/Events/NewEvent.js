@@ -62,6 +62,7 @@ export default class NewEvent extends Component {
         attending: 'pending'
       }
     }
+      console.log(participants);
       EventApiService.addEventParticipants(event.id, participants)
       this.props.history.push(`events/${event.id}`)
     })

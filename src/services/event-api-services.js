@@ -75,7 +75,7 @@ const EventApiService = {
       .then(resjson =>console.log(resjson))
   },
 
-  updateEventParticipant(eventId, parId, attending) {
+  updateEventParticipant(eventId, attending, parId) {
     return fetch(`${config.API_ENDPOINT}/events/${eventId}/participants/${parId}`, {
       method: 'PATCH',
       headers: {

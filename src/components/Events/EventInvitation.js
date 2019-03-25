@@ -12,52 +12,58 @@ export default class EventInvitation extends Component {
 
     componentDidMount() {
         const eventId = parseInt(this.props.match.params.id);
-        console.log(eventId)
         EventApiService
             .getEvent(eventId)
-            .then(this.context.setParticipants)
+            .then(this.context.setEvent)
             .catch(this.context.setError)
 }
 
     handleClickCloseButton=e=>{
-        console.log("close button clicked")
-        console.log(this.props)
         this.props.history.push('/events')
     }
 
-    render(){
-        console.log(this.props)
+    onSubmit(e) {
+        e.preventDefault();
+        const {status} = e.target;
+        console.log(status.value)
+        const eventId = parseInt(this.props.match.params.id);
+          EventApiService.updateEventParticipant(eventId, status.value)
+          this.props.history.push(`events`)
+      }
 
+    render(){
+        const event= this.context.event;
+        console.log(event);
     return (
         <section className="event container">
-            <h2>{this.event.title}</h2>
+            <h2>{event.title}</h2>
             <div className="button-box">
                 <button type="button" onClick={this.handleClickCloseButton}>Close</button>
             </div>
-            <div className="event-box">
                     <img src={headshot} className="event-owner logo" alt="headshot of the event planner's account" />
                     <div className="event-details">
                         <label htmlFor="eventDescription">Event Description:</label>
-                        <p>{this.event.details}</p>
+                        <p>{event.details}</p>
                         <label htmlFor="eventVenue">Venue:</label>
-                        <p>{this.event.place}</p>
+                        <p>{event.place}</p>
                         <label htmlFor="eventDay">Day:</label>
-                        <p>{this.event.meeting_day}</p>
+                        <p>{event.meeting_day}</p>
                         <label htmlFor="eventTime">Time:</label>
-                        <p>{this.event.meeting_time}</p>
-                        <div className="attending">
-                            <label htmlFor="attendees">Can we count you in?</label>
-                            <ul>
-                                <li>Yes</li>
-                                <li>Let me think!</li>
-                                <li>No</li>
-                            </ul>
+                        <p>{event.meeting_time}</p>
+                        <div className="status">
+                            <label htmlFor="status">Can we count you in?</label>
+                            <form onSubmit={e => this.onSubmit(e)}>
+                                <select name="status">
+                                <option value="attending">Yes</option>
+                                <option value="pending">Let me think!</option>
+                                <option value="declined">No</option>
+                                </select>
+                                <div className="button-box">
+                                    <button type="submit">Update Attendance</button>
+                                </div>   
+                            </form>
                         </div>
-                    </div>
-                </div>
-                <div className="button-box">
-                    <button type="button" className="js-remove-event-button">Remove Event</button>
-                </div>        
+                    </div>    
             </section>
     );
 }
