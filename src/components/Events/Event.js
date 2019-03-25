@@ -1,7 +1,14 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import EventApiService from '../../services/event-api-services';
 
 export default class Event extends Component{
+    handleClickRemoveButton=e=>{
+        e.preventDefault();
+        EventApiService.deleteEvent(this.props.id)
+        // .then(this.props.history.push('/events'))
+      }
+
     render(){
     const event = this.props
     return (

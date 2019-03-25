@@ -16,6 +16,11 @@ export default class NewEvent extends Component {
         push:() => {},
     },
 }
+
+  handleClickCloseButton=e=>{
+    this.props.history.push('/events')
+  }
+
   setFriends = friends => {
     this.setState({ friends })
   }
@@ -63,9 +68,9 @@ export default class NewEvent extends Component {
         attending: 'pending'
       }
     }
-      console.log(participants);
-      EventApiService.addEventParticipants(event.id, participants)
-      this.props.history.push(`events/${event.id}`)
+      console.log("participants", participants);
+      EventApiService.addEventParticipant(event.id, participants)
+      // this.props.history.push(`events/${event.id}`)
     })
   }
   render() {
@@ -74,20 +79,20 @@ export default class NewEvent extends Component {
         <section className="event container">
         <h2>New Event</h2>
         <div className="button-box">
-            <button type="button">Close</button>
+            <button type="button" onClick={this.handleClickCloseButton}>Close</button>
         </div>  
         <form onSubmit={e => this.onSubmit(e)}>
             <div className="eventTitle">
                 <label htmlFor="title">Title:</label>
-                <input required name="title"/>
+                <input required name="title" value="title"/>
             </div>
             <div className="eventDescription">
                 <label htmlFor="description">Description:</label>
-                <input name="description"/>
+                <input name="description" value="description"/>
             </div>
             <div className="eventDay">
                 <label htmlFor="day">Date:</label>
-                <input type="date" name="date"/>
+                <input type="date" name="date" />
             </div>
             <div className="eventDescription">
                 <label htmlFor="time">Time:</label>
@@ -95,7 +100,7 @@ export default class NewEvent extends Component {
             </div>
             <div className="eventPlace">
                 <label htmlFor="place">Place:</label>
-                <input type="place" name="place"/>
+                <input type="place" name="place" value="Boston"/>
             </div>
             <ul className="attendees">
           {

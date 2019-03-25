@@ -187,6 +187,10 @@ li{
   padding-bottom: 2%;
 }
 
+.register{
+  text-align: center;
+}
+
 .selected{
   background-image: url('Images/plus.svg');
   background-repeat: no-repeat;

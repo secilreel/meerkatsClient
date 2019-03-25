@@ -24,7 +24,7 @@ class App extends Component {
         <Header />
         <ErrorPage>
         <Switch>
-          <PublicOnlyRoute exact path={'/'} component={Info} />
+          <Route exact path={'/'} component={Info} />
           <PublicOnlyRoute path={'/login'} component={LoginPage} />
           <PublicOnlyRoute path={'/register'} component={RegistrationPage} />
           <PrivateRoute path={'/new_event'} component={NewEvent} />

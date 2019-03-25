@@ -38,9 +38,8 @@ export default class EventDetails extends Component {
                             <label htmlFor="attendees">Participants:</label>
                             <ul>
                             {this.props.participants.map(participant =>
-                            <Link to={`/status/${this.props.eventId}`}>
+                            <Link to={`/status/${this.props.eventId}`} key={participant.id}>
                             <li className="participant-box"
-                            key={participant.id}
                             >
                             <img src={participant.image} className="attandees logo" alt="headshot of the attandee" />
                             {participant.user_name}: {participant.attending}
