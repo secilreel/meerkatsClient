@@ -24,20 +24,21 @@ export default class NewEvent extends Component {
       .then(this.setFriends)
   }
   
-  selectFriend(e, id) {
+  selectFriend(e, friend) {
     e.preventDefault();
     let newSelectedFriends;
-    console.log("newEvents friends", this.state.friends)
-    if (this.state.selectedFriends.includes(id)) {
+    console.log("newEvents available friends", this.state.friends)
+    if (this.state.selectedFriends.includes(friend)) {
       newSelectedFriends = this.state.selectedFriends.filter(
-        friendId => friendId !== id
+        selectedFriend => selectedFriend.id !== friend.id
       );
     } else {
-      newSelectedFriends = [...this.state.selectedFriends, id];
+      newSelectedFriends = [...this.state.selectedFriends, friend];
     }
     this.setState({
       selectedFriends: newSelectedFriends
     });
+    console.log("selected Friends", this.state.selectedFriends)
   }
   onSubmit(e) {
     e.preventDefault();
@@ -104,7 +105,7 @@ export default class NewEvent extends Component {
                 <div
                   key={friend.id}
                   className="selected"
-                  onClick={e => this.selectFriend(e, friend.id)}
+                  onClick={e => this.selectFriend(e, friend)}
                 >
                   <img src={friend.image} className="account logo" alt="headshot of the account holder"/>
                   <p>{friend.user_name}</p>
@@ -114,7 +115,7 @@ export default class NewEvent extends Component {
             return (
               <div
                 key={friend.id}
-                onClick={e => this.selectFriend(e, friend.id)}
+                onClick={e => this.selectFriend(e, friend)}
               >
                 <img src={friend.image} className="account logo" alt="headshot of the account holder"/>
                 <p>{friend.user_name}</p>
