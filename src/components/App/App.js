@@ -13,6 +13,8 @@ import NotFoundPage from '../../routes/NotFoundPage';
 import EventListPage from '../../routes/EventListPage';
 import ExtendedEventPage from '../../routes/ExtendedEventPage';
 import EventInvitation from '../Events/EventInvitation';
+import PrivateRoute from '../Utils/PrivateRoute';
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
 
 class App extends Component {
   render() {
@@ -22,14 +24,14 @@ class App extends Component {
         <Header />
         <ErrorPage>
         <Switch>
-          <Route exact path={'/'} component={Info} />
-          <Route path={'/login'} component={LoginPage} />
-          <Route path={'/register'} component={RegistrationPage} />
-          <Route path={'/new_event'} component={NewEvent} />
-          <Route exact path={'/events'} component={EventListPage} />
-          <Route exaact path={'/events/:id'} component={ExtendedEventPage} />
-          <Route path={'/status/:id'} component={EventInvitation} />
-          <Route path={'/friends'} component={Friends} />
+          <PublicOnlyRoute exact path={'/'} component={Info} />
+          <PublicOnlyRoute path={'/login'} component={LoginPage} />
+          <PublicOnlyRoute path={'/register'} component={RegistrationPage} />
+          <PrivateRoute path={'/new_event'} component={NewEvent} />
+          <PrivateRoute exact path={'/events'} component={EventListPage} />
+          <PrivateRoute exaact path={'/events/:id'} component={ExtendedEventPage} />
+          <PrivateRoute path={'/status/:id'} component={EventInvitation} />
+          <PrivateRoute path={'/friends'} component={Friends} />
           <Route component={NotFoundPage}/>
         </Switch>
         </ErrorPage>

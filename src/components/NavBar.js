@@ -9,7 +9,7 @@ export default function NavBar (){
             <Link to={`/new_event`}>
             <img src={plus} className="account logo" alt="plus sign"/>
             </Link>
-            <Link to={'/login'}>
+            <Link to={'/events'}>
             <img src={account} className="account logo" alt="headshot of the account holder"/>
             </Link>
         </nav>

@@ -171,6 +171,11 @@ li{
   flex-direction: column;
 }
 
+.participant-box{
+  display: flex;
+  align-items: flex-end;
+}
+
 .search-box{
   padding: 2%;
 }

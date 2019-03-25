@@ -39,12 +39,13 @@ export default class EventDetails extends Component {
                             <ul>
                             {this.props.participants.map(participant =>
                             <Link to={`/status/${this.props.eventId}`}>
-                            <li 
+                            <li className="participant-box"
                             key={participant.id}
                             >
                             <img src={participant.image} className="attandees logo" alt="headshot of the attandee" />
-                            {participant.user_name}: {participant.attending};
+                            {participant.user_name}: {participant.attending}
                             </li>
+                            <br />
                             </Link>
                             )
                             }

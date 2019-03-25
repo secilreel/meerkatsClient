@@ -39,6 +39,7 @@ export default class EventInvitation extends Component {
             <div className="button-box">
                 <button type="button" onClick={this.handleClickCloseButton}>Close</button>
             </div>
+            <div className="event-box">
                     <img src={event.image} className="event-owner logo" alt="headshot of the event planner's account" />
                     <div className="event-details">
                         <label htmlFor="eventDescription">Event Description:</label>
@@ -62,6 +63,7 @@ export default class EventInvitation extends Component {
                                 </div>   
                             </form>
                         </div>
+                    </div>
                     </div>    
             </section>
     );
