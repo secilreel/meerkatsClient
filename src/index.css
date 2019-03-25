@@ -161,7 +161,8 @@ button{
 
 li{
   list-style: none;
-  display: block;
+  display: inline-block;
+  margin-left: 2rem;
 }
 
 .login-box{
@@ -182,7 +183,8 @@ li{
 }
 
 .selected{
-  background-color:  #f03861;
+  background-image: url('Images/plus.svg');
+  background-repeat: no-repeat;
 }
 
 #cancel-error{

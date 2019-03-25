@@ -54,12 +54,12 @@ export default class NewEvent extends Component {
     EventApiService.addEvent(newEvent)
     .then(event=> {
       console.log(typeof event.id)
-      const friendsId = this.state.selectedFriends
-      console.log(friendsId);
+      const friends = this.state.selectedFriends
+      console.log(friends);
       let participants = []; 
-      for (let i=0; i<friendsId.length; i++){
+      for (let i=0; i<friends.length; i++){
       participants[i]={
-        user_id: friendsId,
+        user_id: friends[i].id,
         attending: 'pending'
       }
     }
@@ -97,32 +97,32 @@ export default class NewEvent extends Component {
                 <label htmlFor="place">Place:</label>
                 <input type="place" name="place"/>
             </div>
-            <div className="attendees">
+            <ul className="attendees">
           {
             this.state.friends.map(friend => {
-            if (this.state.selectedFriends.includes(friend.id)) {
+            if (this.state.selectedFriends.includes(friend)) {
               return (
-                <div
+                <li
                   key={friend.id}
                   className="selected"
                   onClick={e => this.selectFriend(e, friend)}
                 >
                   <img src={friend.image} className="account logo" alt="headshot of the account holder"/>
                   <p>{friend.user_name}</p>
-                </div>
+                </li>
               );
             }
             return (
-              <div
+              <li
                 key={friend.id}
                 onClick={e => this.selectFriend(e, friend)}
               >
                 <img src={friend.image} className="account logo" alt="headshot of the account holder"/>
                 <p>{friend.user_name}</p>
-              </div>
+              </li>
             );
           })}
-          </div>
+          </ul>
           <div className="button-box">
                 <button type="submit">Create</button>
             </div>

@@ -15,7 +15,6 @@ const FriendApiService = {
         : res.json()
       )
       .then(resjson => {
-        console.log(resjson)
         return resjson})
   },
 
