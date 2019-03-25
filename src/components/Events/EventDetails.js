@@ -1,22 +1,21 @@
 import React,{Component} from 'react';
-import headshot from '../../Images/headshot.png';
+import {Link} from 'react-router-dom';
 
 export default class EventDetails extends Component {
     constructor(props) {
         super(props);
     this.state={
         event: this.props.event,
-        participants: this.props.participant
+        participants: this.props.participants
         }
     }
 
     handleClickCloseButton=()=>{
-        console.log("close button clicked")
-        console.log(this.props)
         this.props.history.goBack()
     }
 
     render(){
+        console.log(this.props)
 
     return (
         <section className="event container">
@@ -25,7 +24,7 @@ export default class EventDetails extends Component {
                 <button type="button" onClick={this.handleClickCloseButton}>Close</button>
             </div>
             <div className="event-box">
-                    <img src={headshot} className="event-owner logo" alt="headshot of the event planner's account" />
+                    <img src={this.props.event.image} className="event-owner logo" alt="headshot of the event planner's account" />
                     <div className="event-details">
                         <label htmlFor="eventDescription">Event Description:</label>
                         <p>{this.props.event.details}</p>
@@ -39,11 +38,15 @@ export default class EventDetails extends Component {
                             <label htmlFor="attendees">Participants:</label>
                             <ul>
                             {this.props.participants.map(participant =>
+                            <Link to={`/status/${this.props.eventId}`}>
                             <li 
                             key={participant.id}
                             >
+                            <img src={participant.image} className="attandees logo" alt="headshot of the attandee" />
                             {participant.user_name}: {participant.attending};
-                            </li>)
+                            </li>
+                            </Link>
+                            )
                             }
                     
                             </ul>

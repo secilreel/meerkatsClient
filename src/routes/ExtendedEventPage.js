@@ -29,12 +29,17 @@ export default class ExtendedEventPage extends Component {
   render() {
     const { event } = this.context
     const participants = this.context.participants
+    const eventId = parseInt(this.props.match.params.id);
+    console.log(eventId)
 
     return (
       <div className='ExtendedEventPage'>
         <EventDetails 
         event={event}
         participants={participants}
+        owner={event.event_owner}
+        image={event.image}
+        eventId={eventId}
         {...this.props}
         />
       </div>

@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import headshot from '../../Images/headshot.png';
 import EventContext from '../../contexts/EventContext';
 import EventApiService from '../../services/event-api-services'
 
@@ -25,10 +24,10 @@ export default class EventInvitation extends Component {
     onSubmit(e) {
         e.preventDefault();
         const {status} = e.target;
-        console.log(status.value)
         const eventId = parseInt(this.props.match.params.id);
+        console.log(status.value, eventId)
           EventApiService.updateEventParticipant(eventId, status.value)
-          this.props.history.push(`events`)
+          this.props.history.push('/events')
       }
 
     render(){
@@ -40,7 +39,7 @@ export default class EventInvitation extends Component {
             <div className="button-box">
                 <button type="button" onClick={this.handleClickCloseButton}>Close</button>
             </div>
-                    <img src={headshot} className="event-owner logo" alt="headshot of the event planner's account" />
+                    <img src={event.image} className="event-owner logo" alt="headshot of the event planner's account" />
                     <div className="event-details">
                         <label htmlFor="eventDescription">Event Description:</label>
                         <p>{event.details}</p>
@@ -54,7 +53,7 @@ export default class EventInvitation extends Component {
                             <label htmlFor="status">Can we count you in?</label>
                             <form onSubmit={e => this.onSubmit(e)}>
                                 <select name="status">
-                                <option value="attending">Yes</option>
+                                <option value="coming">Yes</option>
                                 <option value="pending">Let me think!</option>
                                 <option value="declined">No</option>
                                 </select>
