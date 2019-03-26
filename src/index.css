@@ -190,11 +190,17 @@ li{
 .event-icon-box{
   display: flex;
   flex-direction: row;
-  padding-bottom: 1%;
 }
 
 .event-icons{
-  margin-right: 3%;
+  margin-right: 2%;
+  margin-bottom: 4%;
+}
+
+.event-summary, .event-summary{
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .register{
@@ -202,7 +208,7 @@ li{
 }
 
 .selected{
-  background-image: url('Images/plus.svg');
+  background-image: url('Images/check.svg');
   background-repeat: no-repeat;
 }
 

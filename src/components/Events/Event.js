@@ -8,13 +8,14 @@ import map from '../../Images/map.svg';
 export default class Event extends Component{
     handleClickDeleteButton=e=>{
         e.preventDefault();
-        console.log(this.props.id);
         EventApiService.deleteEvent(this.props.id)
+        .then(console.log('event deleted'))
         // .then(this.props.history.push('/events'))
       }
 
     render(){
     const event = this.props;
+    const date= new Date (event.day).toDateString();
     return (
       <Link to={`/events/${event.id}`}>
         <section className="event container">
@@ -24,15 +25,15 @@ export default class Event extends Component{
                 <div className="event-summary">
                     <div className="event-icon-box">
                     <img src={calendar} alt="calendar icon" className="event-icons" />
-                    <p>{`${event.day}`}</p>
+                    <div>{`${date}`}</div>
                     </div>
                     <div className="event-icon-box" >
                     <img src={clock} alt="clock icon" className="event-icons"/>
-                    <p>{`${event.time}`}</p>
+                    <div>{`${event.time}`}</div>
                     </div>
                     <div className="event-icon-box">
                     <img src={map} alt="clock icon" className="event-icons"/>
-                    <p>{`${event.place}`}</p>
+                    <div>{`${event.place}`}</div>
                     </div>
                 </div>
             </div>

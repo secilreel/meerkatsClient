@@ -26,6 +26,7 @@ export default class EventInvitation extends Component {
         const {status} = e.target;
         const eventId = parseInt(this.props.match.params.id);
         console.log(status.value, eventId)
+        // if()
           EventApiService.updateEventParticipant(eventId, status.value)
           this.props.history.push('/events')
       }

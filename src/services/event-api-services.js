@@ -58,18 +58,18 @@ const EventApiService = {
       )
   },
 
-  deleteEvent(){
-    return fetch(`${config.API_ENDPOINT}/events`, {
+  deleteEvent(id){
+    return fetch(`${config.API_ENDPOINT}/events/${id}`, {
       method: 'DELETE',
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+      .then(res =>{
+        if(!res.ok)
+        throw new Error(res.status);
+      })
+      .catch(error => console.error({error}))
   },
 
 

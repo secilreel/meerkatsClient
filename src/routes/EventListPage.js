@@ -6,6 +6,10 @@ import EventListContext from '../contexts/EventListContext'
 export default class EventListPage extends Component {
   static contextType = EventListContext;
 
+  static defaultProps = {
+    match: { params: {} },
+   }
+
   componentDidMount() {
     this.context.clearError()
     EventApiService.getEvents()

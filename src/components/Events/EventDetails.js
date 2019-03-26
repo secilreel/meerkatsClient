@@ -18,8 +18,7 @@ export default class EventDetails extends Component {
     }
 
     render(){
-        console.log(this.props)
-
+        const date= new Date (this.props.event.meeting_day).toDateString();
     return (
         <section className="event container">
             <h2>{this.props.event.title}</h2>
@@ -29,14 +28,14 @@ export default class EventDetails extends Component {
             <div className="event-box">
                     <img src={this.props.event.image} className="event-owner logo" alt="headshot of the event planner's account" />
                     <div className="event-details">
-                        <p>: {this.props.event.details}</p>
+                        <p>{this.props.event.details}</p>
                         <div className="event-icon-box">
                         <img src={map} alt="clock icon" className="event-icons"/>
-                        <p>{this.props.event.place}</p>
+                        <div>{this.props.event.place}</div>
                         </div>
                         <div className="event-icon-box">
                         <img src={calendar} alt="calendar icon" className="event-icons" />
-                        <p>{this.props.event.meeting_day}</p>
+                        <p>{date}</p>
                         </div>
                         <div className="event-icon-box">
                         <img src={clock} alt="clock icon" className="event-icons"/>

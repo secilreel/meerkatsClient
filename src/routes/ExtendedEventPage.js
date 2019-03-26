@@ -30,8 +30,7 @@ export default class ExtendedEventPage extends Component {
     const { event } = this.context
     const participants = this.context.participants
     const eventId = parseInt(this.props.match.params.id);
-    console.log(eventId)
-
+    
     return (
       <div className='ExtendedEventPage'>
         <EventDetails 
