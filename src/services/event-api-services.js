@@ -99,7 +99,7 @@ const EventApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({
-        attending: attending,
+        attending,
       }),
     })
       .then(res =>

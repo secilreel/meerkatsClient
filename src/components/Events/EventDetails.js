@@ -1,5 +1,8 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
+import calendar from '../../Images/calendar.svg';
+import clock from '../../Images/clock.svg';
+import map from '../../Images/map.svg';
 
 export default class EventDetails extends Component {
     constructor(props) {
@@ -26,16 +29,20 @@ export default class EventDetails extends Component {
             <div className="event-box">
                     <img src={this.props.event.image} className="event-owner logo" alt="headshot of the event planner's account" />
                     <div className="event-details">
-                        <label htmlFor="eventDescription">Event Description:</label>
-                        <p>{this.props.event.details}</p>
-                        <label htmlFor="eventVenue">Venue:</label>
+                        <p>: {this.props.event.details}</p>
+                        <div className="event-icon-box">
+                        <img src={map} alt="clock icon" className="event-icons"/>
                         <p>{this.props.event.place}</p>
-                        <label htmlFor="eventDay">Day:</label>
+                        </div>
+                        <div className="event-icon-box">
+                        <img src={calendar} alt="calendar icon" className="event-icons" />
                         <p>{this.props.event.meeting_day}</p>
-                        <label htmlFor="eventTime">Time:</label>
+                        </div>
+                        <div className="event-icon-box">
+                        <img src={clock} alt="clock icon" className="event-icons"/>
                         <p>{this.props.event.meeting_time}</p>
+                        </div>
                         <div className="attendees">
-                            <label htmlFor="attendees">Participants:</label>
                             <ul>
                             {this.props.participants.map(participant =>
                             <Link to={`/status/${this.props.eventId}`} key={participant.id}>
