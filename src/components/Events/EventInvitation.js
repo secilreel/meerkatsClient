@@ -43,7 +43,13 @@ export default class EventInvitation extends Component {
         }
         else{
             console.log("user was not invited to this event")
-          EventApiService.addEventParticipant(eventId, userId)
+            let newParticipant={
+                user_id: userId, 
+                events_id: eventId, 
+                attending: status.value
+            }
+            console.log(newParticipant)
+          EventApiService.addEventParticipant(eventId, newParticipant)
           .then(console.log("added", userId))
         //   this.props.history.push('/events')
         }

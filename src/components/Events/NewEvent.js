@@ -65,7 +65,7 @@ export default class NewEvent extends Component {
       }
     }
       EventApiService.addEventParticipant(event.id, participants)
-      this.props.history.push(`events/${event.id}`)
+      // this.props.history.push(`events/${event.id}`)
     })
   }
   render() {

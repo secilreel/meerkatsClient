@@ -35,15 +35,16 @@ it('renders the UI as expected', () => {
   expect(tree).toMatchSnapshot();  
   });
 
-// it('renders empty given no selection', () => {
-//     const wrapper = shallow(<Event />)
-//     expect(toJson(wrapper)).toMatchSnapshot()
-//   });
+it('renders empty given no selection', () => {
+    const wrapper = shallow(<Event />)
+    expect(toJson(wrapper)).toMatchSnapshot()
+  });
 
-// it('Should call props.onClick() when the Delete button is clicked', () => {
-//     const clickHandler = () => {console.log('button clicked')};
-//     const wrapper = shallow(<Event onClick={clickHandler}/>);
-//     wrapper.find('button').at(0).simulate('click');
-//     expect(toJson(wrapper)).toMatchSnapshot();
-// });
+it('Should call props.onClick() when the Delete button is clicked', () => {
+    const fakeEvent = { preventDefault: () => console.log('preventDefault') };
+    const clickHandler = () => {console.log('button clicked')};
+    const wrapper = shallow(<Event onClick={clickHandler}/>);
+    wrapper.find('button').at(0).simulate('click', fakeEvent);
+    expect(toJson(wrapper)).toMatchSnapshot();
+});
 })

@@ -20,8 +20,10 @@ export default class Event extends Component{
         console.log(this.props)
         e.preventDefault();
         EventApiService.deleteEvent(this.props.id)
-        .then(()=>this.context.removeEvent(this.props))
-        // .then(this.props.history.push('/'))
+        .then(()=>{
+            this.context.removeEvent(this.props)
+            this.props.history.push('/events')
+        })
       }
 
     render(){
