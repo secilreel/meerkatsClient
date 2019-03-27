@@ -33,13 +33,12 @@ export default class EventInvitation extends Component {
         console.log(participants)
         const eventId = parseInt(this.props.match.params.id);
         let userId=parseInt(TokenService.parseJwt());
-        console.log('invitation userId', userId)
-        for (let i=0; i<participants.length; i++){
+        for (let i=0; i<=participants.length; i++){
         if(participants[i].user_id === userId){
             console.log("user was already invited")
           EventApiService.updateEventParticipant(eventId, status.value)
           .then(console.log("updated", userId))
-        //   this.props.history.push('/events')
+          this.props.history.push('/events')
         }
         else{
             console.log("user was not invited to this event")

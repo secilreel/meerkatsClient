@@ -21,7 +21,6 @@ const TokenService = {
    let userId = Buffer.from(token, 'base64')
     .toString()
     .split(':')[3].split(',')[0];
-    console.log('Token Service userId', userId)
     return userId;
   }
 }

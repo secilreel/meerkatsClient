@@ -16,8 +16,6 @@ export default class Event extends Component{
     static contextType = EventListContext;
 
     handleClickDeleteButton=e=>{
-        console.log(this.context)
-        console.log(this.props)
         e.preventDefault();
         EventApiService.deleteEvent(this.props.id)
         .then(()=>{

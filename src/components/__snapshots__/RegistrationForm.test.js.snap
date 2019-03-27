@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RegistrationForm /> Should call props.onClick() when the Close button is clicked 1`] = `
+<div
+  className="registration container"
+>
+  <h2>
+    Register
+  </h2>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="registration-box"
+    >
+      <div
+        className="full_name"
+      >
+        <label
+          htmlFor="registrationFullName"
+        >
+          Full name:
+        </label>
+        <input
+          name="full_name"
+          required={true}
+        />
+      </div>
+      <div
+        className="username"
+      >
+        <label
+          htmlFor="loginUsername"
+        >
+          User name:
+        </label>
+        <input
+          name="user_name"
+          required={true}
+        />
+      </div>
+      <div
+        className="password"
+      >
+        <label
+          htmlFor="loginPassword"
+        >
+          Password:
+        </label>
+        <input
+          name="password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <div
+        className="button-box"
+      >
+        <button
+          type="submit"
+          value="Submit"
+        >
+          Register
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<RegistrationForm /> renders empty given no selection 1`] = `
+<div
+  className="registration container"
+>
+  <h2>
+    Register
+  </h2>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="registration-box"
+    >
+      <div
+        className="full_name"
+      >
+        <label
+          htmlFor="registrationFullName"
+        >
+          Full name:
+        </label>
+        <input
+          name="full_name"
+          required={true}
+        />
+      </div>
+      <div
+        className="username"
+      >
+        <label
+          htmlFor="loginUsername"
+        >
+          User name:
+        </label>
+        <input
+          name="user_name"
+          required={true}
+        />
+      </div>
+      <div
+        className="password"
+      >
+        <label
+          htmlFor="loginPassword"
+        >
+          Password:
+        </label>
+        <input
+          name="password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <div
+        className="button-box"
+      >
+        <button
+          type="submit"
+          value="Submit"
+        >
+          Register
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<RegistrationForm /> renders the UI as expected 1`] = `
+<div
+  className="registration container"
+>
+  <h2>
+    Register
+  </h2>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="registration-box"
+    >
+      <div
+        className="full_name"
+      >
+        <label
+          htmlFor="registrationFullName"
+        >
+          Full name:
+        </label>
+        <input
+          name="full_name"
+          required={true}
+        />
+      </div>
+      <div
+        className="username"
+      >
+        <label
+          htmlFor="loginUsername"
+        >
+          User name:
+        </label>
+        <input
+          name="user_name"
+          required={true}
+        />
+      </div>
+      <div
+        className="password"
+      >
+        <label
+          htmlFor="loginPassword"
+        >
+          Password:
+        </label>
+        <input
+          name="password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <div
+        className="button-box"
+      >
+        <button
+          type="submit"
+          value="Submit"
+        >
+          Register
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;
