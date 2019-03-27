@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Event /> Should call this.onSubmit() when the Attandance button is clicked 1`] = `
+<Link
+  replace={false}
+  to="/events/undefined"
+>
+  <section
+    className="event container"
+  >
+    <h2 />
+    <div
+      className="event-box"
+    >
+      <img
+        alt="headshot of the event planner"
+        className="event-owner logo"
+      />
+      <div
+        className="event-summary"
+      >
+        <div
+          className="event-icon-box"
+        >
+          <img
+            alt="calendar icon"
+            className="event-icons"
+            src="calendar.svg"
+          />
+          <div>
+            Invalid Date
+          </div>
+        </div>
+        <div
+          className="event-icon-box"
+        >
+          <img
+            alt="clock icon"
+            className="event-icons"
+            src="clock.svg"
+          />
+          <div>
+            undefined
+          </div>
+        </div>
+        <div
+          className="event-icon-box"
+        >
+          <img
+            alt="map icon"
+            className="event-icons"
+            src="map.svg"
+          />
+          <div>
+            undefined
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="button-box"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Remove Event
+      </button>
+    </div>
+  </section>
+</Link>
+`;
+
+exports[`<Event /> renders empty given no selection 1`] = `
+<Link
+  replace={false}
+  to="/events/undefined"
+>
+  <section
+    className="event container"
+  >
+    <h2 />
+    <div
+      className="event-box"
+    >
+      <img
+        alt="headshot of the event planner"
+        className="event-owner logo"
+      />
+      <div
+        className="event-summary"
+      >
+        <div
+          className="event-icon-box"
+        >
+          <img
+            alt="calendar icon"
+            className="event-icons"
+            src="calendar.svg"
+          />
+          <div>
+            Invalid Date
+          </div>
+        </div>
+        <div
+          className="event-icon-box"
+        >
+          <img
+            alt="clock icon"
+            className="event-icons"
+            src="clock.svg"
+          />
+          <div>
+            undefined
+          </div>
+        </div>
+        <div
+          className="event-icon-box"
+        >
+          <img
+            alt="map icon"
+            className="event-icons"
+            src="map.svg"
+          />
+          <div>
+            undefined
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="button-box"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Remove Event
+      </button>
+    </div>
+  </section>
+</Link>
+`;
+
+exports[`<Event /> renders the UI as expected 1`] = `
+<a
+  href="/events/undefined"
+  onClick={[Function]}
+>
+  <section
+    className="event container"
+  >
+    <h2>
+      test Event
+    </h2>
+    <div
+      className="event-box"
+    >
+      <img
+        alt="headshot of the event planner"
+        className="event-owner logo"
+      />
+      <div
+        className="event-summary"
+      >
+        <div
+          className="event-icon-box"
+        >
+          <img
+            alt="calendar icon"
+            className="event-icons"
+            src="calendar.svg"
+          />
+          <div>
+            Sat Mar 30 2019
+          </div>
+        </div>
+        <div
+          className="event-icon-box"
+        >
+          <img
+            alt="clock icon"
+            className="event-icons"
+            src="clock.svg"
+          />
+          <div>
+            10:30:00
+          </div>
+        </div>
+        <div
+          className="event-icon-box"
+        >
+          <img
+            alt="map icon"
+            className="event-icons"
+            src="map.svg"
+          />
+          <div>
+            undefined
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="button-box"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Remove Event
+      </button>
+    </div>
+  </section>
+</a>
+`;

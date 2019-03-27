@@ -56,12 +56,12 @@ export default class EventInvitation extends Component {
                     <div className="event-details">
                         <label htmlFor="eventDescription">Event Description:</label>
                         <p>{event.details}</p>
-                        <label htmlFor="eventVenue">Venue:</label>
-                        <p>{event.place}</p>
                         <label htmlFor="eventDay">Day:</label>
                         <p>{event.meeting_day}</p>
                         <label htmlFor="eventTime">Time:</label>
                         <p>{event.meeting_time}</p>
+                        <label htmlFor="eventVenue">Venue:</label>
+                        <p>{event.place}</p>
                         <div className="status">
                             <label htmlFor="status">Can we count you in?</label>
                             <form onSubmit={e => this.onSubmit(e)}>

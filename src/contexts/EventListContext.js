@@ -6,6 +6,7 @@ const EventListContext = React.createContext({
   setError: () => {},
   clearError: () => {},
   setEventList: () => {},
+  removeEvent:()=>{},
 })
 export default EventListContext
 
@@ -19,11 +20,16 @@ export class EventListProvider extends Component {
     this.setState({ eventList })
   }
 
-  clearEventList = eventList => {
+  clearEventList = () => {
     this.setState({ eventList: [] })
   }
 
-  removeEvent =event => {}
+  removeEvent = event => {
+    console.log(event)
+    let newEventList = this.state.eventList.filter(item => item.id !== event.id)
+    console.log(newEventList);
+    this.setState({eventlist: newEventList})
+  }
 
 
   setError = error => {
@@ -42,6 +48,7 @@ export class EventListProvider extends Component {
       setError: this.setError,
       clearError: this.clearError,
       setEventList: this.setEventList,
+      removeEvent: this.removeEvent,
     }
     return (
       <EventListContext.Provider value={value}>
