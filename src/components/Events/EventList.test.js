@@ -8,7 +8,7 @@ import {MemoryRouter} from 'react-router-dom';
 
 configure({ adapter: new Adapter() });
 
-describe('<Event />', () => {
+describe('<EventList />', () => {
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(

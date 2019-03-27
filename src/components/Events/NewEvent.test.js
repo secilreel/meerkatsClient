@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EventDetails from './Event';
+import NewEvent from './Event';
 import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
 import { configure } from 'enzyme';
@@ -10,12 +10,12 @@ import {MemoryRouter} from 'react-router-dom';
 
 configure({ adapter: new Adapter() });
 
-describe('<EventDetails />', () => {
+describe('<NewEvent />', () => {
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
   <MemoryRouter>
-    <EventDetails />
+    <NewEvent />
   </MemoryRouter>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
@@ -24,11 +24,11 @@ it('renders the UI as expected', () => {
   const tree = renderer
     .create(
     <MemoryRouter>
-    <EventDetails 
-    title="test Event"
-    date="Fri March 30, 2019"
+    <NewEvent 
+    title="Test New Event"
+    day="Fri March 30, 2019"
     time="10:30:00"
-    place="Boston"
+    venue="Boston"
         />
     </MemoryRouter>)
     .toJSON();
@@ -36,15 +36,17 @@ it('renders the UI as expected', () => {
   });
 
 it('renders empty given no selection', () => {
-    const wrapper = shallow(<EventDetails />)
+    const wrapper = shallow(<NewEvent />)
     expect(toJson(wrapper)).toMatchSnapshot()
   });
 
-it('Should call props.onClick() when the Close button is clicked', () => {
+it('Should call this.onSubmit() when the Submit button is clicked', () => {
     const fakeEvent = { preventDefault: () => console.log('preventDefault') };
-    const clickHandler = () => {console.log('button clicked')};
-    const wrapper = shallow(<EventDetails onClick={clickHandler}/>);
-    wrapper.find('button').at(0).simulate('click', fakeEvent);
+    const clickHandler = () => {
+    };
+    
+    const wrapper = shallow(<NewEvent onClick={clickHandler}/>);
+    wrapper.find('button').at(0).simulate('submit', fakeEvent);
     expect(toJson(wrapper)).toMatchSnapshot();
 });
 })

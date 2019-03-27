@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginForm /> Should call props.onClick() when the Close button is clicked 1`] = `
+<div
+  className="login container"
+>
+  <h2>
+    Login
+  </h2>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="login-box"
+    >
+      <div
+        className="username"
+      >
+        <label
+          htmlFor="loginUsername"
+        >
+          User name:
+        </label>
+        <input
+          name="user_name"
+          required={true}
+        />
+      </div>
+      <div
+        className="password"
+      >
+        <label
+          htmlFor="loginPassword"
+        >
+          Password:
+        </label>
+        <input
+          name="password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <div
+        className="button-box"
+      >
+        <button
+          type="submit"
+          value="Submit"
+        >
+          Login
+        </button>
+      </div>
+      <div
+        className="register"
+      >
+        <Link
+          replace={false}
+          to="/register"
+        >
+          <button
+            type="submit"
+            value="Submit"
+          >
+            Register Here!
+          </button>
+        </Link>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<LoginForm /> renders empty given no selection 1`] = `
+<div
+  className="login container"
+>
+  <h2>
+    Login
+  </h2>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="login-box"
+    >
+      <div
+        className="username"
+      >
+        <label
+          htmlFor="loginUsername"
+        >
+          User name:
+        </label>
+        <input
+          name="user_name"
+          required={true}
+        />
+      </div>
+      <div
+        className="password"
+      >
+        <label
+          htmlFor="loginPassword"
+        >
+          Password:
+        </label>
+        <input
+          name="password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <div
+        className="button-box"
+      >
+        <button
+          type="submit"
+          value="Submit"
+        >
+          Login
+        </button>
+      </div>
+      <div
+        className="register"
+      >
+        <Link
+          replace={false}
+          to="/register"
+        >
+          <button
+            type="submit"
+            value="Submit"
+          >
+            Register Here!
+          </button>
+        </Link>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<LoginForm /> renders the UI as expected 1`] = `
+<div
+  className="login container"
+>
+  <h2>
+    Login
+  </h2>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="login-box"
+    >
+      <div
+        className="username"
+      >
+        <label
+          htmlFor="loginUsername"
+        >
+          User name:
+        </label>
+        <input
+          name="user_name"
+          required={true}
+        />
+      </div>
+      <div
+        className="password"
+      >
+        <label
+          htmlFor="loginPassword"
+        >
+          Password:
+        </label>
+        <input
+          name="password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <div
+        className="button-box"
+      >
+        <button
+          type="submit"
+          value="Submit"
+        >
+          Login
+        </button>
+      </div>
+      <div
+        className="register"
+      >
+        <a
+          href="/register"
+          onClick={[Function]}
+        >
+          <button
+            type="submit"
+            value="Submit"
+          >
+            Register Here!
+          </button>
+        </a>
+      </div>
+    </div>
+  </form>
+</div>
+`;

@@ -10,7 +10,7 @@ import {MemoryRouter} from 'react-router-dom';
 
 configure({ adapter: new Adapter() });
 
-describe('<Event />', () => {
+describe('<EventInvitation />', () => {
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
@@ -40,7 +40,7 @@ it('renders empty given no selection', () => {
     expect(toJson(wrapper)).toMatchSnapshot()
   });
 
-it('Should call this.onSubmit() when the Attandance button is clicked', () => {
+it('Should call this.onSubmit() when the Attendance button is clicked', () => {
     const fakeEvent = { preventDefault: () => console.log('preventDefault') };
     const clickHandler = () => {
     };
