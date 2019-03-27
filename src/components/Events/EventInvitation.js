@@ -30,24 +30,29 @@ export default class EventInvitation extends Component {
         e.preventDefault();
         const {status} = e.target;
         const participants =this.context.participants;
+        console.log(participants)
         const eventId = parseInt(this.props.match.params.id);
-        let userId=this.parseJwt();
+        let userId=parseInt(TokenService.parseJwt());
         console.log('invitation userId', userId)
         for (let i=0; i<participants.length; i++){
         if(participants[i].user_id === userId){
+            console.log("user was already invited")
           EventApiService.updateEventParticipant(eventId, status.value)
           .then(console.log("updated", userId))
         //   this.props.history.push('/events')
         }
-        else
+        else{
+            console.log("user was not invited to this event")
           EventApiService.addEventParticipant(eventId, userId)
           .then(console.log("added", userId))
         //   this.props.history.push('/events')
         }
       }
+    }
 
     render(){
         const event= this.context.event;
+        const date =new Date(event.meeting_day).toDateString();
         console.log(this.context);
         console.log('Event Invitation userId', TokenService.parseJwt());
     return (
@@ -62,7 +67,7 @@ export default class EventInvitation extends Component {
                         <label htmlFor="eventDescription">Event Description:</label>
                         <p>{event.details}</p>
                         <label htmlFor="eventDay">Day:</label>
-                        <p>{event.meeting_day}</p>
+                        <p>{date}</p>
                         <label htmlFor="eventTime">Time:</label>
                         <p>{event.meeting_time}</p>
                         <label htmlFor="eventVenue">Venue:</label>

@@ -1,4 +1,4 @@
-This app solves the issue of clutter in event-planning among friends. Premised on that users would like to create, share, and update their attendance quickly within their social circles, Meer
+This app solves the issue of clutter in event-planning among friends. Premised on that users would like to create, share, and update their attendance quickly within their social circles, Meerkats helps organizers keep the event at the center of the event-planning.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
