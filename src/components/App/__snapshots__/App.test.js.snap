@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders the UI as expected 1`] = `
+<div
+  className="App"
+>
+  <nav
+    className="nav-links"
+    role="navigation"
+  >
+    <a
+      href="/new_event"
+      onClick={[Function]}
+    >
+      <img
+        alt="plus sign"
+        className="account logo"
+        src="plus.svg"
+      />
+    </a>
+    <a
+      href="/events"
+      onClick={[Function]}
+    >
+      <img
+        alt="headshot of the account holder"
+        className="account logo"
+        src="account.jpg"
+      />
+    </a>
+  </nav>
+  <header
+    role="banner"
+  >
+    <section
+      id="site"
+    >
+      <div
+        id="siteLogo"
+      >
+        <img
+          alt="Logo of the site with meerkats huddled up"
+          className="logo"
+          src="logo.jpg"
+        />
+      </div>
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <div
+          id="siteTitle"
+        >
+          <h1>
+            Meerkats
+          </h1>
+        </div>
+      </a>
+    </section>
+  </header>
+  <div
+    className="info"
+  >
+    <p
+      id="tagline"
+    >
+      Huddle up with friends!
+    </p>
+    <div
+      className="description container"
+    >
+      <p>
+        Meerkats is designed to simplify event planning amongst friends.
+      </p>
+      <p>
+        Without the clutter of comments, photos, etc., Meerkats helps organizers to keep track of participants and share the event details quickly. Meerkats makes gatherings fun and social again. So, get together with friends, be it at a restaurant, girls' night out, cabin rental, or playdates and let Meerkats help you out in keeping things organized!
+      </p>
+    </div>
+  </div>
+</div>
+`;

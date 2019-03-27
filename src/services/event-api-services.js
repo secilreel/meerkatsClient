@@ -88,7 +88,6 @@ const EventApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
-      .then(resjson =>console.log(resjson))
   },
 
   updateEventParticipant(eventId, attending, parId) {

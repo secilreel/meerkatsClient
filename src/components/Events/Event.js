@@ -4,16 +4,28 @@ import EventApiService from '../../services/event-api-services';
 import calendar from '../../Images/calendar.svg';
 import clock from '../../Images/clock.svg';
 import map from '../../Images/map.svg';
+import EventContext from '../../contexts/EventContext';
 
 export default class Event extends Component{
+    static defaultProps ={
+        history:{
+            push:() => {},
+        },
+    }
+
+    static contextType = EventContext;
+
     handleClickDeleteButton=e=>{
         e.preventDefault();
         EventApiService.deleteEvent(this.props.id)
+        .then(this.context.clearEvent())
         .then(console.log('event deleted'))
-        // .then(this.props.history.push('/events'))
+        .then(this.props.history.push('/events'))
       }
 
     render(){
+        console.log(this.props)
+        // console.log(this.props.participants)
     const event = this.props;
     const date= new Date (event.day).toDateString();
     return (
@@ -32,7 +44,7 @@ export default class Event extends Component{
                     <div>{`${event.time}`}</div>
                     </div>
                     <div className="event-icon-box">
-                    <img src={map} alt="clock icon" className="event-icons"/>
+                    <img src={map} alt="map icon" className="event-icons"/>
                     <div>{`${event.place}`}</div>
                     </div>
                 </div>

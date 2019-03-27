@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import EventContext from '../../contexts/EventContext';
 import EventApiService from '../../services/event-api-services'
+import TokenService from '../../services/token-service';
 
 export default class EventInvitation extends Component {
     static defaultProps = {
@@ -15,6 +16,10 @@ export default class EventInvitation extends Component {
             .getEvent(eventId)
             .then(this.context.setEvent)
             .catch(this.context.setError)
+        EventApiService
+        .getEventParticipants(eventId)
+        .then(this.context.setParticipants)
+        .catch(this.context.setError)
 }
 
     handleClickCloseButton=e=>{
@@ -24,16 +29,22 @@ export default class EventInvitation extends Component {
     onSubmit(e) {
         e.preventDefault();
         const {status} = e.target;
+        const participants =this.context.participants;
+        console.log(participants);
         const eventId = parseInt(this.props.match.params.id);
         console.log(status.value, eventId)
-        // if()
+        // if(participants.user.id == user.id)
           EventApiService.updateEventParticipant(eventId, status.value)
           this.props.history.push('/events')
+        // else(participants.user.id !== user.id)
+        //   EventApiService.addEventParticipant(eventId, user)
+        //   this.props.history.push('/events')
       }
 
     render(){
         const event= this.context.event;
-        console.log(event);
+        console.log(this.context);
+        console.log(TokenService.parseJwt());
     return (
         <section className="event container">
             <h2>{event.title}</h2>

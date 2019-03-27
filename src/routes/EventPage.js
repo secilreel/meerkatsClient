@@ -26,13 +26,12 @@ export default class EventPage extends Component {
   }
 
   render() {
-    console.log("event context", this.context)
-    const event = this.context
-    const participants = this.context.participants
+    const {event} = this.context
+    // const participants = this.context.participants
     return (
       <div className='EventListPage'>
         <Event event={event}
-        participants={participants} 
+        // participants={participants} 
         {...this.props}/>
       </div>
     )
