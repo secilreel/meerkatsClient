@@ -36,9 +36,9 @@ export default class EventInvitation extends Component {
         for (let i=0; i<=participants.length; i++){
         if(participants[i].user_id === userId){
             console.log("user was already invited")
-          EventApiService.updateEventParticipant(eventId, status.value)
-          .then(console.log("updated", userId))
-          this.props.history.push('/events')
+        //   EventApiService.updateEventParticipant(eventId, status.value)
+        //   .then(console.log("updated", userId))
+        //   this.props.history.push('/events')
         }
         else{
             console.log("user was not invited to this event")

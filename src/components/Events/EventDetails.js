@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import calendar from '../../Images/calendar.svg';
 import clock from '../../Images/clock.svg';
 import map from '../../Images/map.svg';
+import EventListContext from '../../contexts/EventListContext';
+import EventApiService from '../../services/event-api-services';
 
 export default class EventDetails extends Component {
     constructor(props) {
@@ -17,8 +19,19 @@ export default class EventDetails extends Component {
         this.props.history.goBack()
     }
 
+    static contextType = EventListContext;
+
+    handleClickDeleteButton=e=>{
+        e.preventDefault();
+        EventApiService.deleteEvent(this.props.eventId)
+        .then(()=>{
+            this.context.removeEvent(this.props.event)
+            this.props.history.goBack()
+        })
+      }
+
     render(){
-        console.log(this.props.participants)
+        console.log(this.props.eventId)
         const date= new Date (this.props.event.meeting_day).toDateString();
     return (
         <section className="event container">
@@ -61,7 +74,7 @@ export default class EventDetails extends Component {
                     </div>
                 </div>
                 <div className="button-box">
-                    <button type="button" className="js-remove-event-button">Remove Event</button>
+                    <button type="button" onClick={this.handleClickDeleteButton}>Remove Event</button>
                 </div>        
             </section>
     );

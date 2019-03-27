@@ -11,7 +11,7 @@ import LoginPage from '../../routes/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage';
 import NotFoundPage from '../../routes/NotFoundPage';
 import EventListPage from '../../routes/EventListPage';
-import ExtendedEventPage from '../../routes/ExtendedEventPage';
+import EventDetailsPage from '../../routes/EventDetailsPage';
 import EventInvitation from '../Events/EventInvitation';
 import PrivateRoute from '../Utils/PrivateRoute';
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
@@ -29,7 +29,7 @@ class App extends Component {
           <PublicOnlyRoute path={'/register'} component={RegistrationPage} />
           <PrivateRoute path={'/new_event'} component={NewEvent} />
           <PrivateRoute exact path={'/events'} component={EventListPage} />
-          <PrivateRoute exaact path={'/events/:id'} component={ExtendedEventPage} />
+          <PrivateRoute exaact path={'/events/:id'} component={EventDetailsPage} />
           <PrivateRoute path={'/status/:id'} component={EventInvitation} />
           <PrivateRoute path={'/friends'} component={Friends} />
           <Route component={NotFoundPage}/>

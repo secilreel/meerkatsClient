@@ -3,7 +3,7 @@ import EventApiService from '../services/event-api-services'
 import EventDetails from '../components/Events/EventDetails'
 import EventContext from '../contexts/EventContext'
 
-export default class ExtendedEventPage extends Component {
+export default class EventDetailsPage extends Component {
   static defaultProps = {
     match: { params: {} },
    }
@@ -35,10 +35,10 @@ export default class ExtendedEventPage extends Component {
       <div className='ExtendedEventPage'>
         <EventDetails 
         event={event}
+        eventId={eventId}
         participants={participants}
         owner={event.event_owner}
         image={event.image}
-        eventId={eventId}
         {...this.props}
         />
       </div>
