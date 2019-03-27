@@ -18,11 +18,10 @@ const TokenService = {
   },
   parseJwt(){
    let token= window.sessionStorage.getItem(config.TOKEN_KEY);
-   console.log(token)
-   let parsed = Buffer.from(token, 'base64')
+   let userId = Buffer.from(token, 'base64')
     .toString()
-    .split(':');
-    console.log(parsed)
+    .split(':')[3].split(',')[0];
+    console.log('Token Service userId', userId)
   }
 }
 

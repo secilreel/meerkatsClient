@@ -10,7 +10,6 @@ export default class EventPage extends Component {
   static contextType = EventContext;
 
   componentDidMount() {
-    console.log(this.props.match)
     const eventId = parseInt(this.props.match.params.id);
     this.context.clearError()
     EventApiService.getEvent()
@@ -27,11 +26,9 @@ export default class EventPage extends Component {
 
   render() {
     const {event} = this.context
-    // const participants = this.context.participants
     return (
       <div className='EventListPage'>
         <Event event={event}
-        // participants={participants} 
         {...this.props}/>
       </div>
     )

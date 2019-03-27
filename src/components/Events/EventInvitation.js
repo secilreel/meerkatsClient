@@ -30,21 +30,26 @@ export default class EventInvitation extends Component {
         e.preventDefault();
         const {status} = e.target;
         const participants =this.context.participants;
-        console.log(participants);
         const eventId = parseInt(this.props.match.params.id);
-        console.log(status.value, eventId)
-        // if(participants.user.id == user.id)
+        let userId=this.parseJwt();
+        console.log('invitation userId', userId)
+        for (let i=0; i<participants.length; i++){
+        if(participants[i].user_id === userId){
           EventApiService.updateEventParticipant(eventId, status.value)
-          this.props.history.push('/events')
-        // else(participants.user.id !== user.id)
-        //   EventApiService.addEventParticipant(eventId, user)
+          .then(console.log("updated", userId))
         //   this.props.history.push('/events')
+        }
+        else
+          EventApiService.addEventParticipant(eventId, userId)
+          .then(console.log("added", userId))
+        //   this.props.history.push('/events')
+        }
       }
 
     render(){
         const event= this.context.event;
         console.log(this.context);
-        console.log(TokenService.parseJwt());
+        console.log('Event Invitation userId', TokenService.parseJwt());
     return (
         <section className="event container">
             <h2>{event.title}</h2>

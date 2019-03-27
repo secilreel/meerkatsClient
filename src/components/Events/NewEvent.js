@@ -32,7 +32,6 @@ export default class NewEvent extends Component {
   selectFriend(e, friend) {
     e.preventDefault();
     let newSelectedFriends;
-    console.log("newEvents available friends", this.state.friends)
     if (this.state.selectedFriends.includes(friend)) {
       newSelectedFriends = this.state.selectedFriends.filter(
         selectedFriend => selectedFriend.id !== friend.id
@@ -43,7 +42,6 @@ export default class NewEvent extends Component {
     this.setState({
       selectedFriends: newSelectedFriends
     });
-    console.log("selected Friends", this.state.selectedFriends)
   }
   onSubmit(e) {
     e.preventDefault();
@@ -58,9 +56,7 @@ export default class NewEvent extends Component {
 
     EventApiService.addEvent(newEvent)
     .then(event=> {
-      console.log(typeof event.id)
       const friends = this.state.selectedFriends
-      console.log(friends);
       let participants = []; 
       for (let i=0; i<friends.length; i++){
       participants[i]={
@@ -68,9 +64,8 @@ export default class NewEvent extends Component {
         attending: 'pending'
       }
     }
-      console.log("participants", participants);
       EventApiService.addEventParticipant(event.id, participants)
-      // this.props.history.push(`events/${event.id}`)
+      this.props.history.push(`events/${event.id}`)
     })
   }
   render() {
