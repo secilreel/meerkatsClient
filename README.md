@@ -10,7 +10,7 @@ In order to take a closer peek at how the application works, you can login to th
 https://secilreel-meerkats-app.now.sh/
 with the demo account.
 username: secil
-password: pass1.
+password: pass1
 
 Developers who want to contribute to this project, you can clone the code and add new features such as adding friends, creating groups from friends, and more. I have already left some breadcrumbs: you can see that friend-api-service is up and running. Code along and send me a merge request. Let's build a clean and efficient events planning to give a chance to our users time to enjoy their friends!
 
