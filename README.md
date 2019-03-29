@@ -1,6 +1,18 @@
-This app solves the issue of clutter in event-planning among friends. Premised on that users would like to create, share, and update their attendance quickly within their social circles, Meerkats helps organizers keep the event at the center of the event-planning.
+# Meerkats -- Event-planning Simplified for Friends
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app solves the issue of clutter in event-planning among friends. Premised on that users would like to create, share, and update their attendance quickly within their social circles, it helps organizers keep the event at the center of their event-planning.
+
+Meerkats is built with React.js and employs some of the best practices of web-development such as JWT, React Router & Context, unit-testing, and integration-testing. It makes fetch calls to the Meerkats Server for each action, such as adding, removing, or updating events.
+
+In this app, a user need to register for an account. After registration, the user is directed to the events page where ze can see all the events. By clicking on each event, the user can see further details about each event such as detailed description, location, date, and participants. Within a detailed view of an event, a user can change zir participation - ze can update attendance or add zirself as a participant to the event. The user can also remove any event from zir event list.
+
+In order to take a closer peek at how the application works, you can login to the live site:
+https://secilreel-meerkats-app.now.sh/
+with the demo account.
+username: secil
+password: pass1.
+
+Developers who want to contribute to this project, you can clone the code and add new features such as adding friends, creating groups from friends, and more. I have already left some breadcrumbs: you can see that friend-api-service is up and running. Code along and send me a merge request. Let's build a clean and efficient events planning to give a chance to our users time to enjoy their friends!
 
 ## Available Scripts
 
@@ -19,52 +31,3 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
