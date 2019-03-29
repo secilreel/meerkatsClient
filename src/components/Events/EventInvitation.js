@@ -32,34 +32,32 @@ export default class EventInvitation extends Component {
         const participants =this.context.participants;
         console.log(participants)
         const eventId = parseInt(this.props.match.params.id);
-        let userId=parseInt(TokenService.parseJwt());
-        for (let i=0; i<=participants.length; i++){
+        let userId = parseInt(TokenService.parseJwt());
+        let isNew = false;
+        for (let i=0; i<participants.length; i++){
         if(participants[i].user_id === userId){
-            console.log("user was already invited")
-        //   EventApiService.updateEventParticipant(eventId, status.value)
-        //   .then(console.log("updated", userId))
-        //   this.props.history.push('/events')
+          EventApiService.updateEventParticipant(eventId, status.value)
+          .then(this.props.history.push('/events'))
+            isNew = true;
+            break;
         }
-        else{
-            console.log("user was not invited to this event")
+    }
+        if (!isNew){
             let newParticipant={
                 user_id: userId, 
                 events_id: eventId, 
                 attending: status.value
             }
-            console.log(newParticipant)
           EventApiService.addEventParticipant(eventId, newParticipant)
-          .then(console.log("added", userId))
-        //   this.props.history.push('/events')
+          .then(this.props.history.push('/events'))
         }
-      }
+      
+    
     }
 
     render(){
         const event= this.context.event;
         const date =new Date(event.meeting_day).toDateString();
-        console.log(this.context);
-        console.log('Event Invitation userId', TokenService.parseJwt());
     return (
         <section className="event container">
             <h2>{event.title}</h2>
