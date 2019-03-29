@@ -18,14 +18,11 @@ export default class RegistrationForm extends Component{
             full_name: full_name.value,
         })
             .then(user => {
-        console.log('registration form submitted')
-        console.log({ full_name, user_name, password })
-
-        full_name.value = ''
-        user_name.value = ''
-        password.value = ''
-        this.props.onRegistrationSuccess()
-        })
+                full_name.value = ''
+                user_name.value = ''
+                password.value = ''
+                this.props.onRegistrationSuccess()
+                })
         .catch(res => {
         this.setState({ error: res.error })
         }) 

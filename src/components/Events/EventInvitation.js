@@ -30,7 +30,6 @@ export default class EventInvitation extends Component {
         e.preventDefault();
         const {status} = e.target;
         const participants =this.context.participants;
-        console.log(participants)
         const eventId = parseInt(this.props.match.params.id);
         let userId = parseInt(TokenService.parseJwt());
         let isNew = false;

@@ -31,7 +31,6 @@ export default class EventDetails extends Component {
       }
 
     render(){
-        console.log(this.props.eventId)
         const date= new Date (this.props.event.meeting_day).toDateString();
     return (
         <section className="event container">

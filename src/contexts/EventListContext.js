@@ -25,9 +25,8 @@ export class EventListProvider extends Component {
   }
 
   removeEvent = event => {
-    console.log("begin", this.state.eventList)
     let newEventList = this.state.eventList.filter(item => item.id !== event.id)
-    this.setState({eventList: newEventList}, ()=>console.log("end",this.state.eventList))
+    this.setState({eventList: newEventList})
   }
 
 
