@@ -49,7 +49,7 @@ export default class LoginForm extends Component{
                     </div>
                     <p>For a demo:
                     <br />
-                    username: meerkat
+                    username: secil
                     <br />
                     password: pass1</p>
                     <div className="register">
