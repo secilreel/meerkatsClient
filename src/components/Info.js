@@ -15,7 +15,7 @@ export default function Info (){
                  - ze can update attendance or add zirself as a participant to the event. 
                  The user can also remove any event from zir event list.</p>
               <p>In order to see the app in action, login the app with the demo account.</p>
-              <p>username: secil</p>
+              <p>username: meerkat</p>
               <p>password: pass1</p>
           </div>
         </div>

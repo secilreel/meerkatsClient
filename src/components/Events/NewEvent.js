@@ -79,11 +79,11 @@ export default class NewEvent extends Component {
         <form onSubmit={e => this.onSubmit(e)}>
             <div className="eventTitle">
                 <label htmlFor="title">Title:</label>
-                <input required name="title" value="title"/>
+                <input required name="title"/>
             </div>
             <div className="eventDescription">
                 <label htmlFor="description">Description:</label>
-                <input name="description" value="description"/>
+                <input name="description"/>
             </div>
             <div className="eventDay">
                 <label htmlFor="day">Date:</label>
@@ -95,7 +95,7 @@ export default class NewEvent extends Component {
             </div>
             <div className="eventPlace">
                 <label htmlFor="place">Place:</label>
-                <input type="place" name="place" value="Boston"/>
+                <input type="place" name="place"/>
             </div>
             <ul className="attendees">
           {

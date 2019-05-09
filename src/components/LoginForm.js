@@ -47,6 +47,9 @@ export default class LoginForm extends Component{
                     <div className="button-box">
                     <button type="submit" value="Submit">Login</button>
                     </div>
+                    <h2>For a demo, use the following:</h2>
+                    <p>username: meerkat</p>
+                    <p>password: pass1</p>
                     <div className="register">
                     <Link to={'/register'}>
                     <button type="submit" value="Submit">Register Here!</button>

@@ -217,6 +217,13 @@ li{
     font-size: 0.7em;
 }
 
+input{
+  padding: 0.2em;
+}
+
+label{
+  padding: 0.2em;
+}
 @media screen and (min-width: 768px){
   .body{
     width: 40%;
